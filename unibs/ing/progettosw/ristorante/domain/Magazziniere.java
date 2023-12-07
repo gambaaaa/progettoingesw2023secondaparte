@@ -1,11 +1,10 @@
 package unibs.ing.progettosw.ristorante.domain;
 
-import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class Magazziniere implements Dipendente {
+public class    Magazziniere implements Dipendente {
     /*
      * Classe che implementa l'interfaccia dipendente e simula le azioni svolte da un magazziniere.
      * */
@@ -56,7 +55,7 @@ public class Magazziniere implements Dipendente {
     // pre : merceList not null and merceList not empty
     //       quantità > 0
     //       listaDellaSpesa not null
-    public void aggiungiMerce(ArrayList<IMerce> merceList, int quantita, Map<IMerce, Integer> listaDellaSpesa) {
+    public void aggiungiMerce(List<IMerce> merceList, int quantita, Map<IMerce, Integer> listaDellaSpesa) {
         for (IMerce merce : merceList) {
             listaDellaSpesa.put(merce, quantita);
         }

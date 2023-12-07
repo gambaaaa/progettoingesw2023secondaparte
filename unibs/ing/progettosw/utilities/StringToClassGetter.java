@@ -3,6 +3,7 @@ package unibs.ing.progettosw.utilities;
 import unibs.ing.progettosw.ristorante.domain.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StringToClassGetter {
     /*
@@ -13,7 +14,7 @@ public class StringToClassGetter {
     // pre : ricette not null
     //       nomeRicetta == ad almeno una ricetta esistente
     // post : aRicetta.getNome() == nomeRicetta, aRicetta not null
-    public Ricetta getRicettafromNome(ArrayList<Ricetta> ricette, String nomeRicetta) {
+    public Ricetta getRicettafromNome(List<Ricetta> ricette, String nomeRicetta) {
         for (Ricetta aRicetta : ricette) {
             if (aRicetta.getRicettaFromNome(nomeRicetta))
                 return aRicetta;
@@ -26,7 +27,7 @@ public class StringToClassGetter {
     // pre : piatti not null
     //       nomePiatti == ad almeno un piatto esistente
     // post : aPiatto.getNome() == nomePiatti, aPiatto not null
-    public Piatto getPiattofromNome(ArrayList<Piatto> piatti, String nomePiatti) {
+    public Piatto getPiattofromNome(List<Piatto> piatti, String nomePiatti) {
         for (Piatto aPiatto : piatti) {
             if (aPiatto.getPiattoFromNome(nomePiatti))
                 return aPiatto;
@@ -38,7 +39,7 @@ public class StringToClassGetter {
     // pre : menuTematici not null
     //       nomeMenuTematico == ad almeno un menu esistente
     // post : aMenuT.getNome() == nomeMenuTematico, aMenuT not null
-    public Menu getMenuTematicofromNome(ArrayList<Menu> menuTematici, String nomeMenuTematico) {
+    public Menu getMenuTematicofromNome(List<Menu> menuTematici, String nomeMenuTematico) {
         for (Menu aMenuT : menuTematici) {
             if (aMenuT.getMenuFromNome(nomeMenuTematico))
                 return aMenuT;
@@ -51,7 +52,7 @@ public class StringToClassGetter {
     // pre : ingredienti not null
     //       nomeIngrediente == ad almeno un ingrediente
     // post : aIngr.getNome() == nomeIngrediente, aIngr not null
-    public IMerce getIngredienteFromNome(ArrayList<IMerce> ingredienti, String nomeIngrediente) {
+    public IMerce getIngredienteFromNome(List<IMerce> ingredienti, String nomeIngrediente) {
         for (IMerce aIngr : ingredienti) {
             if (aIngr.getIngredienteFromNome(nomeIngrediente))
                 return aIngr;

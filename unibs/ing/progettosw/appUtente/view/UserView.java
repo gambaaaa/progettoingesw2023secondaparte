@@ -13,7 +13,6 @@ public class UserView {
      * View utilizzata per stampare su console le informazioni essenziali per creare una corretta prenotazione.
      * */
 
-    private Scanner input = new Scanner(System.in);
     private UserController controller = new UserController();
     private DateUtility du = new DateUtility();
 
