@@ -1,26 +1,25 @@
 package unibs.ing.progettosw.appUtente.controller;
 
+import unibs.ing.progettosw.appUtente.domain.PrenotazioneUtente;
 import unibs.ing.progettosw.ristorante.domain.Gestore;
 import unibs.ing.progettosw.ristorante.domain.Menu;
 import unibs.ing.progettosw.ristorante.domain.Piatto;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
-
+import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.InputDati;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
-import unibs.ing.progettosw.utilities.DateUtility;
-
-import unibs.ing.progettosw.appUtente.domain.PrenotazioneUtente;
 
 import java.text.ParseException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserController {
+    private final StringToDateConverter std = new StringToDateConverter();
+    private final DateUtility du = new DateUtility();
     /*
      * Controller utilizzato per elaborare le informazioni essenziali per creare una corretta prenotazione.
      * */
     private PrenotazioneUtente nuovaPrenotazione = new PrenotazioneUtente();
-    private final StringToDateConverter std = new StringToDateConverter();
-    private final DateUtility du = new DateUtility();
     private Gestore gestore;
 
     public UserController() throws ParseException {
@@ -40,10 +39,12 @@ public class UserController {
     // pre : numeroMenu > 0
     // post : menuTematiciPrenotati.size() > 0 and menuTematiciPrenotati.size() == numeroMenu
     public Map<String, Integer> ordinaMenuTematici(int numeroMenu, int dayPassed) {
+        Map<String, Integer> menuTematiciPrenotati = creaMenuPrenotati(new HashMap<>(), numeroMenu, dayPassed);
+        return menuTematiciPrenotati;
+    }
+
+    private Map<String, Integer> creaMenuPrenotati(Map<String, Integer> menuTematiciPrenotati, int numeroMenu, int dayPassed) {
         int menuScelto;
-        Map<String, Integer> menuTematiciPrenotati = new HashMap<>();
-
-
         for (int i = 0; i < numeroMenu; i++) {
             String listaMenu = listaMenuDaStampare(dayPassed);
             menuScelto = InputDati.leggiIntero(listaMenu, 0, gestore.getMenuTematiciValidi(dayPassed).size() - 1);
@@ -81,9 +82,12 @@ public class UserController {
     // pre : numeroPiatti > 0
     // post : piattiPrenotati.size() > 0 and piattiPrenotati.size() == numeroPiatti
     public Map<String, Integer> ordinaPiatti(int numeroPiatti, int dayPassed) {
-        Map<String, Integer> piattiPrenotati = new HashMap<>();
-        int piattoScelto;
+        Map<String, Integer> piattiPrenotati = creaPiattiOrdinati(new HashMap<>(), numeroPiatti, dayPassed);
+        return piattiPrenotati;
+    }
 
+    private Map<String, Integer> creaPiattiOrdinati(Map<String, Integer> piattiPrenotati, int numeroPiatti, int dayPassed) {
+        int piattoScelto;
         for (int j = 0; j < numeroPiatti; j++) {
             String listaPiatti = listaPiattiDaStampare(dayPassed);
             piattoScelto = InputDati.leggiIntero(listaPiatti, 0, gestore.getMenuAllaCarta().getPiatti().size() - 1);

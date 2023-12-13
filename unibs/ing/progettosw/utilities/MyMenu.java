@@ -6,41 +6,36 @@ Si suppone che la voce per uscire sia sempre associata alla scelta 0
 e sia presentata in fondo al menu
 
 */
-public class MyMenu
-{
+public class MyMenu {
     /*
-    * Classe di utilità. Contiene metodi utili per gestire correttamente un menu a scelta.
-    * */
+     * Classe di utilità. Contiene metodi utili per gestire correttamente un menu a scelta.
+     * */
     final private static String CORNICE = "--------------------------------";
     final private static String VOCE_USCITA = "0\tEsci";
     final private static String RICHIESTA_INSERIMENTO = "Digita il numero dell'opzione desiderata > ";
 
     private String titolo;
-    private String [] voci;
+    private String[] voci;
 
 
-    public MyMenu(String titolo, String [] voci)
-    {
+    public MyMenu(String titolo, String[] voci) {
         this.titolo = titolo;
         this.voci = voci;
     }
 
     // metodo che permette di scegliere una delle proposte visualizzate a video con stampaMenu();
     // la scelta viene successivamente trattata come un numero intero.(return int)
-    public int scegli ()
-    {
+    public int scegli() {
         stampaMenu();
         return InputDati.leggiIntero(RICHIESTA_INSERIMENTO);
     }
 
-    public void stampaMenu ()
-    {
+    public void stampaMenu() {
         System.out.println(CORNICE);
         System.out.println(titolo);
         System.out.println(CORNICE);
-        for (int i=0; i<voci.length; i++)
-        {
-            System.out.println( (i+1) + "\t" + voci[i]);
+        for (int i = 0; i < voci.length; i++) {
+            System.out.println((i + 1) + "\t" + voci[i]);
         }
         System.out.println();
         System.out.println(VOCE_USCITA);
