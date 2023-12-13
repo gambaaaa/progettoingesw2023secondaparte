@@ -22,20 +22,4 @@ public class Magazzino {
             }
         }
     }
-
-    /*
-    public void decrementaQuantitaMerce(String nomeMerce, int decrementoQuantita) {
-        //o usare metodo isContained
-        Set<IMerce> listaMerce = registroMagazzino.keySet();
-        IMerce merceSelezionata = getIngredienteFromNome(nomeMerce);
-
-        if (merceSelezionata != null) {
-            if (listaMerce.contains(merceSelezionata)) {//sicuramente c'è del codice migliore ad esempio sfruttare
-                if (decrementoQuantita <= merceSelezionata.getQuantita()) {
-                    merceSelezionata.rimuoviQuantita(decrementoQuantita);
-                }
-            }
-        }
-    }
-    */
 }

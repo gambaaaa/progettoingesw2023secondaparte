@@ -15,13 +15,13 @@ public class Gestore implements Dipendente {
     private FileService fs = new FileService();
     private DateUtility du = new DateUtility();
     private Ristorante ristorante;
-    private ArrayList<IMerce> bevande;
-    private ArrayList<IMerce> generiExtra;
-    private ArrayList<Ricetta> ricette;
-    private ArrayList<IMerce> ingredienti;
-    private ArrayList<Piatto> piatti;
+    private List<IMerce> bevande;
+    private List<IMerce> generiExtra;
+    private List<Ricetta> ricette;
+    private List<IMerce> ingredienti;
+    private List<Piatto> piatti;
     private Menu menuAllaCarta;
-    private ArrayList<Menu> menuT;
+    private List<Menu> menuT;
 
     public Gestore() {
     }
@@ -103,7 +103,7 @@ public class Gestore implements Dipendente {
     // inizializza i menu tematici validi del ristorante leggendoli da un file esterno
     private void initMenuCarta() {
         double caricoLavoroPiatti = sommaCaricoLavoroPiatti(piatti);
-        ArrayList<Piatto> piattiDisponibili = creaListaPiattiDisponibili(piatti);
+        List<Piatto> piattiDisponibili = creaListaPiattiDisponibili(piatti);
         this.menuAllaCarta = new Menu("Menù alla carta", piattiDisponibili, caricoLavoroPiatti);
     }
 
@@ -114,8 +114,8 @@ public class Gestore implements Dipendente {
 
     // crea la lista dei piatti validi
     // post : lista dei piatti (può essere vuota, anche se è un caso poco sensato)
-    private ArrayList<Piatto> creaListaPiattiDisponibili(ArrayList<Piatto> piatti) {
-        ArrayList<Piatto> piattiDisponibili = new ArrayList<>();
+    private List<Piatto> creaListaPiattiDisponibili(List<Piatto> piatti) {
+        List<Piatto> piattiDisponibili = new ArrayList<>();
         Date dataOdierna = new Date();
         for (Piatto aPiatto : piatti) {
             if (!dataOdierna.before(aPiatto.getInizioDisponibilita()) && !dataOdierna.after(aPiatto.getFineDisponibilita())) {
@@ -129,7 +129,7 @@ public class Gestore implements Dipendente {
     // calcolo della somma del carico di lavoro dei piatti
     // pre : piatti not null, piatti.size() > 0
     // post : sum > 0, getCaricoLavoro di ogni piatto = sum
-    private double sommaCaricoLavoroPiatti(ArrayList<Piatto> piatti) {
+    private double sommaCaricoLavoroPiatti(List<Piatto> piatti) {
         double sum = 0;
         for (Piatto aPiatto : piatti) {
             sum += aPiatto.getCaricoLavoro();
@@ -217,23 +217,23 @@ public class Gestore implements Dipendente {
         return ristorante;
     }
 
-    public ArrayList<IMerce> getBevande() {
+    public List<IMerce> getBevande() {
         return bevande;
     }
 
-    public ArrayList<IMerce> getGeneriExtra() {
+    public List<IMerce> getGeneriExtra() {
         return generiExtra;
     }
 
-    public ArrayList<Ricetta> getRicette() {
+    public List<Ricetta> getRicette() {
         return ricette;
     }
 
-    public ArrayList<IMerce> getIngredienti() {
+    public List<IMerce> getIngredienti() {
         return ingredienti;
     }
 
-    public ArrayList<Piatto> getPiatti() {
+    public List<Piatto> getPiatti() {
         return piatti;
     }
 
@@ -241,15 +241,15 @@ public class Gestore implements Dipendente {
         return menuAllaCarta;
     }
 
-    public ArrayList<Menu> getMenuT() {
+    public List<Menu> getMenuT() {
         return menuT;
     }
 
     // Metodo che restituisce la lista dei menu tematici validi, per semplicità un menu contiene 2 piatti, perciò
     // se un menu contiene due piatti validi allora è a sua volta un menu valido
     // post : menuValidi.size() > 0
-    public ArrayList<Menu> getMenuTematiciValidi(int dayPassed) {
-        ArrayList<Menu> menuValidi = new ArrayList<>();
+    public List<Menu> getMenuTematiciValidi(int dayPassed) {
+        List<Menu> menuValidi = new ArrayList<>();
 
         for (Menu aMenu : menuT) {
             if (getNumeroPiattiValidi(aMenu, dayPassed) == 2)
@@ -274,8 +274,8 @@ public class Gestore implements Dipendente {
         return countValidi;
     }
 
-    public ArrayList<Piatto> getListaPiattiValidi(int dayPassed){
-        ArrayList<Piatto> piattiValidi = new ArrayList<>();
+    public List<Piatto> getListaPiattiValidi(int dayPassed){
+        List<Piatto> piattiValidi = new ArrayList<>();
         for (Piatto aPiatto : piatti) {
             if (du.getDatePassedSinceToday(dayPassed).after(aPiatto.getInizioDisponibilita()) && du.getDatePassedSinceToday(dayPassed).before(aPiatto.getFineDisponibilita())) {
                 piattiValidi.add(aPiatto);

@@ -51,7 +51,7 @@ public class FileService {
     }
 
     private List<Prenotazione> creaPrenotazioni(JSONArray prenotazioni) throws ParseException {
-        ArrayList<Prenotazione> prenotazioniList = new ArrayList();
+        List<Prenotazione> prenotazioniList = new ArrayList();
         for (int i = 0; i < prenotazioni.length(); i++) {
             JSONObject aPreno = (JSONObject) prenotazioni.get(i);
             JSONObject menuTematiciJSON = aPreno.getJSONObject("menuTematicoPrenotato");
@@ -81,7 +81,7 @@ public class FileService {
         return map;
     }
 
-    private Menu creaMenuTematico(JSONObject key, ArrayList<Ricetta> ricette) throws ParseException {
+    private Menu creaMenuTematico(JSONObject key, List<Ricetta> ricette) throws ParseException {
         String nome = key.getString("nome");
         JSONArray piatti = key.getJSONArray("piatti");
         List<Piatto> listaPiatti = creaListaPiatti(piatti, ricette);
@@ -89,8 +89,8 @@ public class FileService {
         return new Menu(nome, listaPiatti, caricoLavoro);
     }
 
-    private ArrayList<Menu> creaListaMenuTematico(JSONArray menu, ArrayList<Ricetta> ricette) throws ParseException {
-        ArrayList<Menu> list = new ArrayList<>();
+    private List<Menu> creaListaMenuTematico(JSONArray menu, List<Ricetta> ricette) throws ParseException {
+        List<Menu> list = new ArrayList<>();
 
         for (int i = 0; i < menu.length(); i++) {
             list.add(creaMenuTematico((JSONObject) menu.get(i), ricette));
@@ -99,14 +99,14 @@ public class FileService {
         return list;
     }
 
-    public ArrayList<Menu> setupMenuTematico(String path, String key, ArrayList<Ricetta> ricette) throws ParseException {
+    public List<Menu> setupMenuTematico(String path, String key, List<Ricetta> ricette) throws ParseException {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray menu = object.getJSONArray(key);
         return creaListaMenuTematico(menu, ricette);
     }
 
-    private Piatto creaPiatto(JSONObject key, ArrayList<Ricetta> ricette) throws ParseException {
+    private Piatto creaPiatto(JSONObject key, List<Ricetta> ricette) throws ParseException {
         String nomePiatto = key.getString("nome");
         String nomeRicetta = key.getString("ricetta");
         Ricetta ricetta = stc.getRicettafromNome(ricette, nomeRicetta);
@@ -127,8 +127,8 @@ public class FileService {
         return new Ricetta(nome, ingredientiList, porzione, caricoLavoroPorzione);
     }
 
-    private List<Piatto> creaListaPiatti(JSONArray piatti, ArrayList<Ricetta> ricette) throws ParseException {
-        ArrayList<Piatto> list = new ArrayList<>();
+    private List<Piatto> creaListaPiatti(JSONArray piatti, List<Ricetta> ricette) throws ParseException {
+        List<Piatto> list = new ArrayList<>();
 
         for (int i = 0; i < piatti.length(); i++) {
             list.add(creaPiatto((JSONObject) piatti.get(i), ricette));
@@ -325,15 +325,15 @@ public class FileService {
     }
 
 
-    public ArrayList<Piatto> setupPiatti(String path, String key, ArrayList<Ricetta> ricette) throws ParseException {
+    public List<Piatto> setupPiatti(String path, String key, List<Ricetta> ricette) throws ParseException {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray merce = object.getJSONArray(key);
         return creaPiatti(merce, ricette);
     }
 
-    private ArrayList<Piatto> creaPiatti(JSONArray object, ArrayList<Ricetta> ricette) throws ParseException {
-        ArrayList<Piatto> piattiList = new ArrayList();
+    private List<Piatto> creaPiatti(JSONArray object, List<Ricetta> ricette) throws ParseException {
+        List<Piatto> piattiList = new ArrayList();
         for (int i = 0; i < object.length(); i++) {
             JSONObject aPiatto = (JSONObject) object.get(i);
             String nome = aPiatto.getString("nome");
