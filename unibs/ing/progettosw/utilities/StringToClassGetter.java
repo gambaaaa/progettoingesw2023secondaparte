@@ -1,8 +1,10 @@
 package unibs.ing.progettosw.utilities;
 
-import unibs.ing.progettosw.ristorante.domain.*;
+import unibs.ing.progettosw.ristorante.domain.IMerce;
+import unibs.ing.progettosw.ristorante.domain.Menu;
+import unibs.ing.progettosw.ristorante.domain.Piatto;
+import unibs.ing.progettosw.ristorante.domain.Ricetta;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StringToClassGetter {

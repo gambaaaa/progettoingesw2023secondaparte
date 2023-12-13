@@ -1,6 +1,5 @@
 package unibs.ing.progettosw.utilities;
 
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -32,6 +31,7 @@ public class DateUtility {
         cal.add(Calendar.DATE, dayPassed);
         return cal.getTime();
     }
+
     // Metodo che restituisce il nome del giorno (in italiano) secondo la formula giorno odierno + giorni trascorsi, il metodo è usato
     // per simulare il passaggio del tempo
     // pre : dayPassed > 0
