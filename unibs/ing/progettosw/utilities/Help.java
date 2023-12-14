@@ -12,7 +12,7 @@ public class Help {
     final private static String INTESTAZIONE_CONCLUSIONE_MANUALE = "--------------------------------BREVE MANUALE D'USO - GUIDA--------------------------------\n\n";
     final private static String INTRODUZIONE = " In questo breve manuale vengono chiariti le opzioni del menu presentato:\n\t 1 - Carica Prenotazioni\n\t 2 - Simula Ristorante \n\t 3 - Prenotazioni Utente\n\n";
 
-    final private static String CARICA_PRENOTAZIONI="-------------1 - Carica Prenotazioni-------------\n\n Caricamento delle prenotazioni inerenti date successive a quella odierna.\n\n";
+    final private static String CARICA_PRENOTAZIONI = "-------------1 - Carica Prenotazioni-------------\n\n Caricamento delle prenotazioni inerenti date successive a quella odierna.\n\n";
     final private static String SIMULA_RISTORANTE = "-------------2 - Simula Ristorante-------------\n\n Si tratta di una simulazione guidata in cui vengono caricati i dati del ristorante,successivamente.\n\n" +
             " verrà creata una lista della spesa per effettuare gli acquisti e mantenere costantemente aggiornato il registro delle merci in giacenza in magazzino. Infine verrà simulato il funzionamento della cucina.\n" +
             " Il tutto è caratterizzato con opportuni messaggi di feedback.\n\n";

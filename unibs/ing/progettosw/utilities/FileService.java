@@ -1,7 +1,6 @@
 package unibs.ing.progettosw.utilities;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import unibs.ing.progettosw.ristorante.domain.*;
@@ -10,17 +9,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import java.util.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import static java.nio.file.Files.delete;
 
 public class FileService {
 
