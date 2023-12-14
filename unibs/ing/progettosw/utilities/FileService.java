@@ -141,15 +141,15 @@ public class FileService {
         Ristorante.getInstance(nome, postiSedere, caricoLavoroPersona);
     }
 
-    public ArrayList<IMerce> setupBevande(String path, String key) {
+    public List<IMerce> setupBevande(String path, String key) {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray merce = object.getJSONArray(key);
         return creaBevande(merce);
     }
 
-    private ArrayList<IMerce> creaBevande(JSONArray object) {
-        ArrayList<IMerce> merceList = new ArrayList();
+    private List<IMerce> creaBevande(JSONArray object) {
+        List<IMerce> merceList = new ArrayList();
         for (int i = 0; i < object.length(); i++) {
             JSONObject aMerce = (JSONObject) object.get(i);
             String nome = aMerce.getString("nome");
@@ -161,15 +161,15 @@ public class FileService {
         return merceList;
     }
 
-    public ArrayList<IMerce> setupGeneriExtra(String path, String key) {
+    public List<IMerce> setupGeneriExtra(String path, String key) {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray generi = object.getJSONArray(key);
         return GeneriExtra(generi);
     }
 
-    private ArrayList<IMerce> GeneriExtra(JSONArray object) {
-        ArrayList<IMerce> merceList = new ArrayList();
+    private List<IMerce> GeneriExtra(JSONArray object) {
+        List<IMerce> merceList = new ArrayList();
         for (int i = 0; i < object.length(); i++) {
             JSONObject aMerce = (JSONObject) object.get(i);
             String nome = aMerce.getString("nome");
@@ -182,15 +182,15 @@ public class FileService {
         return merceList;
     }
 
-    public ArrayList<IMerce> setupIngredienti(String path, String key) throws ParseException {
+    public List<IMerce> setupIngredienti(String path, String key) throws ParseException {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray merce = object.getJSONArray(key);
         return creaIngredienti(merce);
     }
 
-    private ArrayList<IMerce> creaIngredienti(JSONArray object) throws ParseException {
-        ArrayList<IMerce> merceList = new ArrayList();
+    private List<IMerce> creaIngredienti(JSONArray object) throws ParseException {
+        List<IMerce> merceList = new ArrayList();
         for (int i = 0; i < object.length(); i++) {
             JSONObject aMerce = (JSONObject) object.get(i);
             String nome = aMerce.getString("nome");
@@ -204,15 +204,15 @@ public class FileService {
         return merceList;
     }
 
-    public ArrayList<Ricetta> setupRicetta(String path) {
+    public List<Ricetta> setupRicetta(String path) {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray ricette = object.getJSONArray("ricette");
         return creaRicette(ricette);
     }
 
-    private ArrayList<Ricetta> creaRicette(JSONArray object) {
-        ArrayList<Ricetta> ricetteList = new ArrayList();
+    private List<Ricetta> creaRicette(JSONArray object) {
+        List<Ricetta> ricetteList = new ArrayList();
         for (int i = 0; i < object.length(); i++) {
             JSONObject ricetta = (JSONObject) object.get(i);
             String nome = ricetta.getString("nome");
