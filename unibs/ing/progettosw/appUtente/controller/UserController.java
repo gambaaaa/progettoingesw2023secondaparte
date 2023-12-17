@@ -46,8 +46,7 @@ public class UserController {
     private Map<String, Integer> creaMenuPrenotati(Map<String, Integer> menuTematiciPrenotati, int numeroMenu, int dayPassed) {
         int menuScelto;
         for (int i = 0; i < numeroMenu; i++) {
-            String listaMenu = listaMenuDaStampare(dayPassed);
-            menuScelto = InputDati.leggiIntero(listaMenu, 0, gestore.getMenuTematiciValidi(dayPassed).size() - 1);
+            menuScelto = InputDati.leggiIntero(0, gestore.getMenuTematiciValidi(dayPassed).size() - 1);
 
             // se un particolare menu non è ancora stato ordinato lo inseriamo per la prima volta nella mappa
             // altrimenti se è già stato inserito o la mappa non è vuota, cerchiamo il nome del menu e aumentiamo
@@ -66,7 +65,7 @@ public class UserController {
 
     // metodo che costruisce la stringa che contiene la lista dei vari menu tematici validi
     // post : sb.toString() != null
-    private String listaMenuDaStampare(int dayPassed) {
+    public String listaMenuDaStampare(int dayPassed) {
         StringBuilder sb = new StringBuilder();
         int counter = 0;
 
@@ -89,8 +88,7 @@ public class UserController {
     private Map<String, Integer> creaPiattiOrdinati(Map<String, Integer> piattiPrenotati, int numeroPiatti, int dayPassed) {
         int piattoScelto;
         for (int j = 0; j < numeroPiatti; j++) {
-            String listaPiatti = listaPiattiDaStampare(dayPassed);
-            piattoScelto = InputDati.leggiIntero(listaPiatti, 0, gestore.getMenuAllaCarta().getPiatti().size() - 1);
+            piattoScelto = InputDati.leggiIntero(0, gestore.getMenuAllaCarta().getPiatti().size() - 1);
             // se un particolare piatto non è ancora stato ordinato lo inseriamo per la prima volta nella mappa
             // altrimenti se è già stato inserito o la mappa non è vuota, cerchiamo il nome del piatto e aumentiamo
             // di una unità il numero di quel piatto prenotato
@@ -108,7 +106,7 @@ public class UserController {
 
     // metodo che costruisce la stringa che contiene la lista dei vari piatti validi
     // post : sb.toString() != null
-    private String listaPiattiDaStampare(int dayPassed) {
+    public String listaPiattiDaStampare(int dayPassed) {
         StringBuilder sb = new StringBuilder();
         int counter = 0;
 
