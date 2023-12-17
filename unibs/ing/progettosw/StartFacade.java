@@ -1,6 +1,7 @@
 package unibs.ing.progettosw;
 
 import unibs.ing.progettosw.appUtente.AppUtente;
+import unibs.ing.progettosw.exceptions.ErrorDialog;
 import unibs.ing.progettosw.ristorante.Initializer;
 import unibs.ing.progettosw.utilities.*;
 
@@ -9,20 +10,13 @@ import java.text.ParseException;
 import java.util.Calendar;
 
 public class StartFacade {
-    private static Initializer init;
-
-    static {
-        try {
-            init = new Initializer();
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private static AppUtente appUtente = new AppUtente();
-    private static DateUtility du = new DateUtility();
-    private static JSONFileWriter jfw = new JSONFileWriter();
-    private static FileService fs = new FileService();
+    private Initializer init;
+    private ErrorDialog ed = new ErrorDialog();
+    private AppUtente appUtente = new AppUtente();
+    private DateUtility du = new DateUtility();
+    private JSONFileWriter jfw = new JSONFileWriter();
+    private TXTFileWriter tfw = new TXTFileWriter();
+    private FileService fs = new FileService();
     public void displayStartMenu() throws IOException, ParseException, InterruptedException {
         int giorniPassati = fs.leggiGiornoDaFile(); // variabile giorniPassati necessaria per simulare l'avanzamento della data - dei giorni
         displayMenu(giorniPassati);
@@ -34,14 +28,14 @@ public class StartFacade {
             System.out.println("Oggi è " + du.nameOfDaySinceToday(giorniPassati));
             // per come funziona la stampa su file .json è necessario che ogni volta che si caricano le prenotazioni
             // si deve chiudere il programma e ricominciare daccapo
-
-            scelta = InputDati.leggiIntero("Scegli quale programma eseguire o se consultare un breve manuale d'uso:\n" +
+            System.out.println("Scegli quale programma eseguire o se consultare un breve manuale d'uso:\n" +
                     "1 - Carica Prenotazioni\n" +
                     "2 - Simula Ristorante\n" +
                     "3 - Prenotazioni Utente\n" +
                     "4 - Help\n" +
-                    "5 - Esci dal programma\n", 1, 5);
-            System.out.println("\n\n");
+                    "5 - Esci dal programma");
+            scelta = InputDati.leggiIntero(1, 5);
+            System.out.println();
             giorniPassati = eseguiScelta(scelta, giorniPassati);
         } while (scelta != 5 && scelta != 1 && scelta != 3);
         // continuo fino a che non scelgo di "uscire" dal programma oppure di caricare le prenotazioni.
@@ -53,7 +47,7 @@ public class StartFacade {
             case 1:
                 // se è domenica non raccolgo le prenotazioni
                 if (isDomenica(giorniPassati)) {
-                    System.out.println("Ristorante Chiuso!\n\n\n");
+                    ed.logError("Ristorante Chiuso!\n");
                 } else {
                     init.initPrenotazioni(giorniPassati);
                 }
@@ -62,7 +56,7 @@ public class StartFacade {
             case 2:
                 // se è domenica il ristorante è chiuso, si passa automaticamente al giorno successivo
                 if (isDomenica(giorniPassati)) {
-                    System.out.println("Ristorante Chiuso!\n\n\n");
+                    ed.logError("Ristorante Chiuso!\n");
                 } else {
                     init.startRistorante();
                 }
@@ -76,7 +70,7 @@ public class StartFacade {
                 break;
             case 5:
                 // resetto i giorni trascorsi e le prenotazioniAccettate
-                jfw.azzeraGiornoSuFile();
+                tfw.scriviStringaSuFile(String.valueOf(0),"initFiles\\giorniPassati.txt",false);
                 jfw.creaPrenotazioniVuote("/initFiles/prenotazioniAccettate.json");
         }
 

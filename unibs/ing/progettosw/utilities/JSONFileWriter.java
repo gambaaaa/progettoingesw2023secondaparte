@@ -78,13 +78,4 @@ public class JSONFileWriter extends JSONFile {
         Path vuotoNew = Paths.get("initFiles\\prenotazioniAccettateVuote.json");
         Files.copy(vuotoNew, accettateOld);
     }
-
-
-    public void azzeraGiornoSuFile() throws IOException {
-        File giornoFile = new File("initFiles\\giorniPassati.txt");
-        FileWriter fw = new FileWriter(giornoFile);
-        fw.write(String.valueOf(0));
-        fw.flush();
-        fw.close();
-    }
 }

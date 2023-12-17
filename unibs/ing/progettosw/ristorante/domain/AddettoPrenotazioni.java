@@ -1,11 +1,13 @@
 package unibs.ing.progettosw.ristorante.domain;
 
+import unibs.ing.progettosw.exceptions.ErrorLogger;
 import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.utilities.StringToClassGetter;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.util.*;
 
@@ -20,6 +22,7 @@ public class AddettoPrenotazioni implements Dipendente {
     private List<Prenotazione> prenotazioni = new ArrayList();
     private List<Prenotazione> prenotazioniAccettate = new ArrayList<>();
     private Gestore gestore = new Gestore();
+    private ErrorLogger el = new ErrorLogger();
 
     // costruttore
     // creazione di un AddettoPrenotazioni in base ad un parametro intero
@@ -50,8 +53,14 @@ public class AddettoPrenotazioni implements Dipendente {
             }
             fs.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate", "prenotazioniAccettate");
         } else {
+            createLogError();
             prenotazioniAccettate = null;
         }
+    }
+
+    private void createLogError() throws IOException {
+        el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) +
+                ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.");
     }
 
     // metodo che permette di "accettare"/"validare" - considerare accettata/valida una data prenotazione
