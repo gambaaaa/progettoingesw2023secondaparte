@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 public class StartFacade {
-    private Initializer init;
+    private Initializer init = new Initializer();
     private ErrorDialog ed = new ErrorDialog();
     private AppUtente appUtente = new AppUtente();
     private DateUtility du = new DateUtility();

@@ -11,16 +11,16 @@ public class Initializer {
      * */
     private ViewRistorante view = new ViewRistorante();
 
-    public Initializer() throws ParseException {
+    public Initializer() {
     }
 
     // metodo che stampa su console le informazioni principali del ristorante
-    public void startRistorante() throws ParseException {
+    public void startRistorante() {
         view.interazioneInizialeUI();
     }
 
     // metodo che salva su file le prenotazioni accettate dagli addetti
-    public void initPrenotazioni(int giorniPassati) throws IOException, ParseException, InterruptedException {
+    public void initPrenotazioni(int giorniPassati) {
         view.caricaPrenotazioni(giorniPassati);
     }
 }
