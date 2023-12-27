@@ -3,9 +3,6 @@ package unibs.ing.progettosw.ristorante.controller;
 import unibs.ing.progettosw.ristorante.domain.*;
 import unibs.ing.progettosw.ristorante.view.ViewRistorante;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 public class Controller {
     /*
      * Classe che rappresenta il Controller del package unibs.ing.progettosw.ristorante conforme con il pattern MVC.
@@ -18,12 +15,12 @@ public class Controller {
     private Magazzino magazzino;
     private Cucina cucina;
 
-    public Controller() throws ParseException {
+    public Controller() {
         gestore = new Gestore();
     }
 
     // legge i file .json e carica le informazioni del ristorante (ristorante, bevande, ingrediente, etc...)
-    public void caricaGestore() throws ParseException {
+    public void caricaGestore() {
         this.gestore = new Gestore();
         this.gestore.initAll();
     }
@@ -36,12 +33,12 @@ public class Controller {
     // scrive le prenotazioni accettate su file, simulando lo scorrere del tempo
     // pre : giorniPassati > 0
     // post : prenotazione scritta su file, se valida
-    public void caricaAddetto(int giorniPassati) throws IOException, ParseException {
+    public void caricaAddetto(int giorniPassati) {
         addetto = new AddettoPrenotazioni(giorniPassati);
     }
 
     // carica le informazioni relative al magazziniere
-    public void caricaMagazziniere() throws ParseException {
+    public void caricaMagazziniere() {
         magazziniere = new Magazziniere(gestore);
     }
 
@@ -51,7 +48,7 @@ public class Controller {
     }
 
     // simula il funzionamento della cucina
-    public void simulaCucina() throws ParseException, InterruptedException, IOException {
+    public void simulaCucina() {
         cucina = new Cucina(magazziniere.creaListaCucina(gestore), gestore, magazzino);
         cucina.eseguiComande();
     }

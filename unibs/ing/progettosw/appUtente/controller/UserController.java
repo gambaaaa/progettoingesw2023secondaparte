@@ -9,7 +9,6 @@ import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.InputDati;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
 
-import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,15 +21,15 @@ public class UserController {
     private PrenotazioneUtente nuovaPrenotazione = new PrenotazioneUtente();
     private Gestore gestore;
 
-    public UserController() throws ParseException {
+    public UserController() {
     }
 
-    public void start() throws ParseException {
+    public void start() {
         // metodo principale che inizializza i piatti e menu tematici validi che è possibile prenotare
         creaListaPiattiIngredienti();
     }
 
-    private void creaListaPiattiIngredienti() throws ParseException {
+    private void creaListaPiattiIngredienti() {
         gestore = new Gestore();
         gestore.initAll();
     }
@@ -124,7 +123,7 @@ public class UserController {
     //       menuTematiciPrenotati not null
     //       piattiPrenotati not null
     // post : prenotazione salvata su file
-    public void creaPrenotazione(String data, int numeroCoperti, Map<String, Integer> menuTematiciPrenotati, Map<String, Integer> piattiPrenotati) throws ParseException {
+    public void creaPrenotazione(String data, int numeroCoperti, Map<String, Integer> menuTematiciPrenotati, Map<String, Integer> piattiPrenotati) {
         Prenotazione p = new Prenotazione(std.creaDataDaStringa(data), du.todaysDate(),
                 numeroCoperti, menuTematiciPrenotati, piattiPrenotati);
         nuovaPrenotazione.creaPrenotazione(p);

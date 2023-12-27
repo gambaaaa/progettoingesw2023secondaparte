@@ -4,7 +4,6 @@ import unibs.ing.progettosw.appUtente.controller.UserController;
 import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.InputDati;
 
-import java.text.ParseException;
 import java.util.Map;
 
 public class UserViewFacade {
@@ -12,10 +11,10 @@ public class UserViewFacade {
     private UserController controller = new UserController();
     private DateUtility du = new DateUtility();
 
-    public UserViewFacade() throws ParseException {
+    public UserViewFacade() {
     }
 
-    public void startViewFacade(int dayPassed) throws ParseException {
+    public void startViewFacade(int dayPassed) {
         controller.start();
 
         System.out.println("Inserire la data della prenotazione: (formato dd/MM/yyyy)");

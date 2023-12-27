@@ -22,7 +22,7 @@ public class Prenotazione {
 
     /*
      * costruttore
-     * creazione di una Prenotazione in base a quattro parametri da specificare: data di prenotazione,numeroCoperti , menuTematicoPrenotato ,
+     * creazione di una Prenotazione in base a quattro parametri da specicare: data di prenotazione,numeroCoperti , menuTematicoPrenotato ,
      * piattoPrenotato.
      *
      * pre : data != NULL && dataPrenotazione != NULL && menuTematicoPrenotato != NULL && piattoPrenotato != NULL

@@ -294,7 +294,7 @@ public class FileService {
         JSONArray prenotazioni = object.getJSONArray(key);
         FileWriter fileWriter = null;
         StringWriter sWriter = new StringWriter();
-        ;
+
 
         path = path.replace('/', '\\');
 

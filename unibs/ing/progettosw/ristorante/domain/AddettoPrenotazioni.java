@@ -2,11 +2,10 @@ package unibs.ing.progettosw.ristorante.domain;
 
 import unibs.ing.progettosw.exceptions.ErrorLogger;
 import unibs.ing.progettosw.utilities.DateUtility;
-import unibs.ing.progettosw.utilities.FileService;
+import unibs.ing.progettosw.utilities.JSONFileReader;
+import unibs.ing.progettosw.utilities.JSONFileWriter;
 import unibs.ing.progettosw.utilities.StringToClassGetter;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -20,7 +19,8 @@ public class AddettoPrenotazioni implements Dipendente {
     private int giorniPassati = 0;
     private int caricoLavoro = 0;
     private Ristorante ristorante = Ristorante.getInstance(); // Singleton
-    private FileService fs = new FileService();
+    private JSONFileReader jfr = new JSONFileReader();
+    private JSONFileWriter jfw = new JSONFileWriter();
     private List<Prenotazione> prenotazioni = new ArrayList();
     private List<Prenotazione> prenotazioniAccettate = new ArrayList<>();
     private Gestore gestore = new Gestore();
@@ -32,7 +32,7 @@ public class AddettoPrenotazioni implements Dipendente {
     // pre : giorniPassati >= 0
     // post : creato correttamente un AddettoPrenotazioni con conseguente caricamento-raccolta delle prenotazioni accettate
     //        vedi metodi sottostanti.
-    public AddettoPrenotazioni(int giorniPassati) throws IOException, ParseException {
+    public AddettoPrenotazioni(int giorniPassati) {
         this.giorniPassati = giorniPassati;
         initPrenotazioni();
     }
@@ -41,20 +41,20 @@ public class AddettoPrenotazioni implements Dipendente {
     // metodo che permette di inizializzare --> raccogliere le prenotazioni
     // pre : -
     // post :
-    private void initPrenotazioni() throws IOException, ParseException {
+    private void initPrenotazioni() {
         raccogliPrenotazioni();
     }
 
     // metodo che permette di raccogliere le prenotazioni e "accettare"/"validare" tali prenotazioni
     // pre : -
     // post : eventuale aggiornamento di prenotazioniAccettate (attributo di tale classe) e del file prenotazioniAccettate.json
-    private void raccogliPrenotazioni() throws IOException, ParseException {
-        prenotazioni = fs.leggiPrenotazioni("/initFiles/prenotazioni.json", "prenotazioni");
+    private void raccogliPrenotazioni() {
+        prenotazioni = jfr.leggiPrenotazioni("/initFiles/prenotazioni.json", "prenotazioni");
         if (prenotazioni != null) {
             for (Prenotazione aPreno : prenotazioni) {
                 inserisciNuovaPrenotazione(aPreno);
             }
-            fs.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate", "prenotazioniAccettate");
+            jfw.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
         } else {
             el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) +
                     ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.");
@@ -65,7 +65,7 @@ public class AddettoPrenotazioni implements Dipendente {
     // metodo che permette di "accettare"/"validare" - considerare accettata/valida una data prenotazione
     // pre : p != NULL
     // post : eventuale aggiornamento dell'attributo prenotazioniAccettate (se la prenotazione è valida)
-    private void inserisciNuovaPrenotazione(Prenotazione p) throws ParseException {
+    private void inserisciNuovaPrenotazione(Prenotazione p) {
         boolean isDataPrenotazioneValida = isDataPrenotazioneValida(p);
         boolean isCopertiSuperati = isNumeroCopertiSuperato(p);
         boolean isCaricoLavoroSuperato = false;
@@ -109,7 +109,7 @@ public class AddettoPrenotazioni implements Dipendente {
     // post : true se il carico di lavoro sostenibile dal ristorante è minore del carico di lavoro della totalità delle prenotazioni accettate
     //        false altrimenti
     // Vedi classe Ristorante
-    private boolean isCaricoLavoroSuperato(Prenotazione p) throws ParseException {
+    private boolean isCaricoLavoroSuperato(Prenotazione p) {
         return ristorante.getCaricoLavoroSostenibile() < getCaricoLavoroAttuale(p);
     }
 
@@ -118,7 +118,7 @@ public class AddettoPrenotazioni implements Dipendente {
     // pre : p != NULL
     // post : valore_ritornato=somma del carico di lavoro di ciascuna prenotazione accettata + carico di lavoro di una data prenotazione p
     //        valore_ritornato >= 0
-    public int getCaricoLavoroAttuale(Prenotazione p) throws ParseException {
+    public int getCaricoLavoroAttuale(Prenotazione p) {
         int caricoLavoroAttuale = 0;
         for (Prenotazione pTemp : prenotazioniAccettate) {
             caricoLavoroAttuale += getCaricoLavoroFromPrenotazione(pTemp);
@@ -132,7 +132,7 @@ public class AddettoPrenotazioni implements Dipendente {
     // metodo che calcola il carico di lavoro di una data prenotazione
     // pre : pTemp != NULL
     // post : caricoLavoro >= 0 && caricoLavoro = somma caricoLavoro di ciascun Menu tematico e piatto prenotato/i
-    private int getCaricoLavoroFromPrenotazione(Prenotazione pTemp) throws ParseException {
+    private int getCaricoLavoroFromPrenotazione(Prenotazione pTemp) {
 
         // carico lavoro di una prenotazione : valore carico di lavoro di ciascun menuTematico associato +
         //                                     valore carico di lavoro  di ciascun piatto associato alla prenotazione

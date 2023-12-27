@@ -14,15 +14,6 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class JSONFileWriter extends JSONFile {
-
-    public void scriviGiornoSuFile(int giorniPassati) throws IOException {
-        File giornoFile = new File("initFiles\\giorniPassati.txt");
-        FileWriter fw = new FileWriter(giornoFile);
-        fw.write(String.valueOf(giorniPassati));
-        fw.flush();
-        fw.close();
-    }
-
     public void scriviPrenotazioneSuFile(Prenotazione p, String path, String key, String typePrenotazione) {
         JSONObject object = readFromJSON(path);
         JSONArray prenotazioni = object.getJSONArray(key);
@@ -73,7 +64,7 @@ public class JSONFileWriter extends JSONFile {
         }
     }
 
-    public void scriviPrenotazioniAccettateSuFile(List<Prenotazione> prenotazioniAccettate, String path, String typePrenotazione) throws IOException {
+    public void scriviPrenotazioniAccettateSuFile(List<Prenotazione> prenotazioniAccettate, String path, String typePrenotazione) {
         File filePath = creaFilePath(path);
         creaPrenotazioniVuote(path.substring(1));
         JSONObject prenotazioniObj = new JSONObject();
@@ -82,11 +73,18 @@ public class JSONFileWriter extends JSONFile {
         scriviSuFile(prenotazioniObj, filePath);
     }
 
-    public void creaPrenotazioniVuote(String path) throws IOException {
+    public void creaPrenotazioniVuote(String path) {
         File filePath = new File(path.substring(1));
         filePath.delete();
         Path accettateOld = Paths.get(path.substring(1));
         Path vuotoNew = Paths.get("initFiles\\prenotazioniAccettateVuote.json");
-        Files.copy(vuotoNew, accettateOld);
+        try {
+            Files.copy(vuotoNew, accettateOld);
+        } catch (IOException e) {
+            StringWriter sWriter = new StringWriter();
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore nel copiare i file. Controllare che esistano e siano corretti.");
+            ErrorLogger.getInstance().logError(sWriter.toString());
+        }
     }
 }
