@@ -7,7 +7,6 @@ import unibs.ing.progettosw.utilities.*;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Calendar;
 
 public class StartFacade {
     private Initializer init;
@@ -16,9 +15,10 @@ public class StartFacade {
     private DateUtility du = new DateUtility();
     private JSONFileWriter jfw = new JSONFileWriter();
     private TXTFileWriter tfw = new TXTFileWriter();
-    private FileService fs = new FileService();
+    private JSONFileReader jfr = new JSONFileReader();
+
     public void displayStartMenu() throws IOException, ParseException, InterruptedException {
-        int giorniPassati = fs.leggiGiornoDaFile(); // variabile giorniPassati necessaria per simulare l'avanzamento della data - dei giorni
+        int giorniPassati = jfr.leggiGiornoDaFile(); // variabile giorniPassati necessaria per simulare l'avanzamento della data - dei giorni
         displayMenu(giorniPassati);
     }
 
@@ -46,16 +46,16 @@ public class StartFacade {
         switch (scelta) {
             case 1:
                 // se è domenica non raccolgo le prenotazioni
-                if (isDomenica(giorniPassati)) {
+                if (du.isSunday(giorniPassati)) {
                     ed.logError("Ristorante Chiuso!\n");
                 } else {
                     init.initPrenotazioni(giorniPassati);
                 }
-                jfw.scriviGiornoSuFile(giorniPassati);
+                tfw.scriviGiornoSuFile(giorniPassati);
                 break;
             case 2:
                 // se è domenica il ristorante è chiuso, si passa automaticamente al giorno successivo
-                if (isDomenica(giorniPassati)) {
+                if (du.isSunday(giorniPassati)) {
                     ed.logError("Ristorante Chiuso!\n");
                 } else {
                     init.startRistorante();
@@ -70,14 +70,10 @@ public class StartFacade {
                 break;
             case 5:
                 // resetto i giorni trascorsi e le prenotazioniAccettate
-                tfw.scriviStringaSuFile(String.valueOf(0),"initFiles\\giorniPassati.txt",false);
+                tfw.scriviStringaSuFile(String.valueOf(0), "initFiles\\giorniPassati.txt", false);
                 jfw.creaPrenotazioniVuote("/initFiles/prenotazioniAccettate.json");
         }
 
         return giorniPassati;
-    }
-
-    private boolean isDomenica(int giorniPassati) {
-        return du.dayPassed(giorniPassati) == Calendar.SUNDAY;
     }
 }

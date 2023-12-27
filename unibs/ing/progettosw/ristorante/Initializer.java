@@ -2,11 +2,8 @@ package unibs.ing.progettosw.ristorante;
 
 import unibs.ing.progettosw.ristorante.view.ViewRistorante;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Initializer {
     /*

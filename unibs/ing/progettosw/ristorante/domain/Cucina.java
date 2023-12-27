@@ -1,25 +1,32 @@
 package unibs.ing.progettosw.ristorante.domain;
 
-import unibs.ing.progettosw.utilities.FileService;
+import unibs.ing.progettosw.exceptions.ErrorDialog;
+import unibs.ing.progettosw.exceptions.ErrorLogger;
+import unibs.ing.progettosw.utilities.JSONFileReader;
 import unibs.ing.progettosw.utilities.StringToClassGetter;
 
-import java.text.ParseException;
-import java.util.*;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class Cucina {
 
     /*
-    * Classe che rappresenta la Cucina del ristorante.
-    * */
+     * Classe che rappresenta la Cucina del ristorante.
+     * */
 
     //Attributi privati
     private Map<IMerce, Integer> registroCucina;//Integer è la quantità in cucina che deve essere <= di quella disponibile in maghazizino
 
     private Random rand = new Random();
     private Magazzino magazzino;
-    private FileService fs = new FileService();
+    private JSONFileReader jfr = new JSONFileReader();
     private Gestore gestore;
     private StringToClassGetter stc = new StringToClassGetter();
+    private ErrorLogger el = new ErrorLogger();
 
     // invariante di classe
     public Cucina(Map<IMerce, Integer> registroCucina, Gestore gestore, Magazzino magazzino) {
@@ -31,13 +38,16 @@ public class Cucina {
     // metodo utilizzato per "simulare" le comande di una cucina, a partire dalla lista delle prenotazioni accettate
     // pre : -
     // post :
-    public void eseguiComande() throws ParseException, InterruptedException {
+    public void eseguiComande() {
         List<Prenotazione> listaPrenotazioniAccettate = recuperaPrenotazioniAccettate();
 
         if (listaPrenotazioniAccettate != null) {
             for (Prenotazione p : listaPrenotazioniAccettate) {
                 if (p != null) {
                     cucinaPiatto(p);
+                } else {
+                    el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione trovata. " +
+                            "Assicurarsi che sia tutto corretto.");
                 }
             }
         } else {
@@ -49,8 +59,9 @@ public class Cucina {
     // pre : -
     // post : prenotazioni deve essere una lista di solo prenotazioni accettate (anche vuota - empty)
     //        prenotazioni.size() >= 0
-    private List<Prenotazione> recuperaPrenotazioniAccettate() throws ParseException {
-        List<Prenotazione> prenotazioni = fs.leggiPrenotazioni("/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
+    private List<Prenotazione> recuperaPrenotazioniAccettate() {
+        List<Prenotazione> prenotazioni = null;
+        prenotazioni = jfr.leggiPrenotazioni("/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
         return prenotazioni;
     }
 
@@ -58,7 +69,7 @@ public class Cucina {
     // pre : aPreno deve essere una prenotazione accettata && aPreno != NULL
     // post : piatti e menu tematici specificati dalla Prenotazione aPreno "cucinati" && quantità degli ingredienti relativi
     // decrementata opportunamente
-    private void cucinaPiatto(Prenotazione aPreno) throws InterruptedException {
+    private void cucinaPiatto(Prenotazione aPreno) {
         Map<String, Integer> piattiPrenotati = aPreno.getPiattoPrenotato();
         estraiPiattiDaMappa(piattiPrenotati);
         Map<String, Integer> menuTPrenotati = aPreno.getMenuTematicoPrenotato();
@@ -69,7 +80,7 @@ public class Cucina {
     // pre : menuTPrenotati != NULL
     // post : piatti costituenti ciascun menu tematico prenotato "cucinati" && quantità ingredienti relativi decrementata
     // opportunamente, ingredienti della cucina decrementati a seconda dell'esigenze del piatto
-    private void estraiMenuDaMappa(Map<String, Integer> menuTPrenotati) throws InterruptedException {
+    private void estraiMenuDaMappa(Map<String, Integer> menuTPrenotati) {
         for (Map.Entry<String, Integer> entry : menuTPrenotati.entrySet()) {
             Menu menuT = stc.getMenuTematicofromNome(gestore.getMenuT(), entry.getKey());
             System.out.println("\nStiamo cucinando " + menuT.getNome() + ", portate pazienza...");
@@ -78,7 +89,14 @@ public class Cucina {
                 System.out.println("Stiamo cucinando " + aPiatto.getNome());
                 Ricetta r = aPiatto.getRicetta();
                 estraiIngredientiDaRicetta(r);
-                Thread.sleep(2000);
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    StringWriter sWriter = new StringWriter();
+                    e.printStackTrace(new PrintWriter(sWriter));
+                    ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
+                    ErrorLogger.getInstance().logError(sWriter.toString());
+                }
             }
         }
     }
@@ -94,12 +112,19 @@ public class Cucina {
     // ovvero di "cucinare" ciascuna ricetta rappresentante quel piatto
     // pre : mappaPietanze != NULL
     // post : ricetta costituente ciascun piatto "cucinata" && quantità ingredienti relativi decrementate opportunamente
-    private void estraiPiattiDaMappa(Map<String, Integer> mappaPietanze) throws InterruptedException {
+    private void estraiPiattiDaMappa(Map<String, Integer> mappaPietanze) {
         for (Map.Entry<String, Integer> entry : mappaPietanze.entrySet()) {
             System.out.println("\nStiamo cucinando " + entry.getKey() + ", portate pazienza...");
             Ricetta r = estraiRicettaDaPiatti(entry);
             estraiIngredientiDaRicetta(r);
-            Thread.sleep(2000);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                StringWriter sWriter = new StringWriter();
+                e.printStackTrace(new PrintWriter(sWriter));
+                ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
+                ErrorLogger.getInstance().logError(sWriter.toString());
+            }
         }
     }
 

@@ -1,5 +1,7 @@
 package unibs.ing.progettosw.utilities;
 
+import unibs.ing.progettosw.ristorante.domain.Prenotazione;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -20,6 +22,35 @@ public class DateUtility {
         LocalDate today = LocalDate.now();
         Date todayDate = Date.from(today.atStartOfDay(defaultZoneId).toInstant());
         return todayDate;
+    }
+
+
+    // metodo che restituisce la data del giorno contando i giorni trascorsi.
+    // post : data di (oggi + giorni trascorsi)
+    public Date dateSinceDayPassed(int giorniPassati) {
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate today = LocalDate.now();
+        today = today.plusDays(giorniPassati);
+        Date todayDate = Date.from(today.atStartOfDay(defaultZoneId).toInstant());
+        return todayDate;
+    }
+
+    public boolean isSunday(int giorniPassati) {
+        return dayPassed(giorniPassati) == Calendar.SUNDAY;
+    }
+
+    // metodo che permette di controllare se una specifica prenotazione in ingresso
+    // è stata effettuata con almeno un giorno d'anticipo/ "almeno ieri" rispetto alla data odierna;
+    // se la data di prenotazione di una specifica prenotazione precede quella odierna-oggi.
+    // Vedi metodo soprastante isDataPrenotazioneValida
+    // pre : p != NULL
+    // post : valore_ritornato = -1 se prenotazione "è arrivata" almeno ieri ("data prenotazione < data odierna-oggi") - se la data di prenotazione precede quella odierna
+    //        valore_ritornato = 0  se la data di prenotazione di p corrisponde/coincide alla/con la data odierna
+    //        valore_ritornato = 1  se la data di prenotazione di p segue la data odierna
+    public int almostYesteday(Prenotazione p, int giorniPassati) {
+        //Controllo che d non sia uguale a today ma "minore" --> < 0
+        //se ritorna -1 (<=) sicuramente la data di prenotazione "è arrivata" almeno ieri
+        return p.getDataPrenotazione().compareTo(dateSinceDayPassed(giorniPassati)); // se si usa DateUtility ==> return almenoIeri(p.getDataPrenotazione)
     }
 
     // Metodo che restituisce il giorno a seconda di quanto tempo è passato nella simulazione
