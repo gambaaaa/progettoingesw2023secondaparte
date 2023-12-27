@@ -1,0 +1,46 @@
+{
+  "piatti" : [
+    {
+      "nome" : "Bistecca alla fiorentina",
+      "ricetta" : "Bistecca alla fiorentina",
+      "caricoLavoro" : 8.0,
+      "inizioDisponibilita" : "01/01/2023",
+      "fineDisponibilita" : "31/07/2025"
+    },
+    {
+      "nome" : "Tagliatelle al ragù",
+      "ricetta" : "Tagliatelle al ragù",
+      "caricoLavoro" : 7.0,
+      "inizioDisponibilita" : "01/01/2023",
+      "fineDisponibilita" : "31/12/2023"
+    },
+    {
+      "nome" : "Pasta al salmone",
+      "ricetta" : "Pasta al salmone",
+      "caricoLavoro" : 6.0,
+      "inizioDisponibilita" : "01/01/2023",
+      "fineDisponibilita" : "23/11/2023"
+    },
+    {
+      "nome" : "Branzino alla ligure",
+      "ricetta" : "Branzino alla ligure",
+      "caricoLavoro" : 7.0,
+      "inizioDisponibilita" : "01/01/2023",
+      "fineDisponibilita" : "31/12/2025"
+    },
+    {
+      "nome" : "Pizza margherita",
+      "ricetta" : "Pizza margherita",
+      "caricoLavoro" : 5.0,
+      "inizioDisponibilita" : "01/01/2023",
+      "fineDisponibilita" : "31/12/2026"
+    },
+    {
+      "nome" : "Tomahawk alla griglia",
+      "ricetta" : "Tomahawk alla griglia",
+      "caricoLavoro" : 8.0,
+      "inizioDisponibilita" : "01/01/2023",
+      "fineDisponibilita" : "31/12/2025"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "ingredienti": [
+    {
+      "nome": "Acqua",
+      "quantita": 300,
+      "UdM": "L",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Farina",
+      "quantita": 1000,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Pomodoro",
+      "quantita": 300,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Olio extravergine di oliva",
+      "quantita": 200,
+      "UdM": "L",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Lievito",
+      "quantita": 10,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Mozzarella",
+      "quantita": 50,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Pasta",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Tagliatelle",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Salmone",
+      "quantita": 50,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Panna",
+      "quantita": 10,
+      "UdM": "L",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Uova",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Patate",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Burro",
+      "quantita": 50,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Riso",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Cipolla",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Aglio",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Pepe nero",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Parmigiano",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Capperi",
+      "quantita": 30,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Tonno",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Branzino",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Gamberetti",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Gamberoni",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Polipo",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Bistecca Fiorentina",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Sale fino",
+      "quantita": 500,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Rosmarino",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Manzo(tomahawk)",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Sale grosso",
+      "quantita": 300,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Salvia",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Rucola",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Pasta",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Aceto di vino bianco",
+      "quantita": 100,
+      "UdM": "L",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Prezzemolo",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Senape",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Entrecote",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Vongole",
+      "quantita": 300,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Cozze",
+      "quantita": 300,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Pesce spada",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Merluzzo",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Piselli",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Pinoli",
+      "quantita": 100,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Olive taggiasche",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Timo",
+      "quantita": 150,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    },
+    {
+      "nome": "Ragù fatto in casa",
+      "quantita": 200,
+      "UdM": "kg",
+      "dataScadenza": "31/12/2024"
+    }
+  ]
+}

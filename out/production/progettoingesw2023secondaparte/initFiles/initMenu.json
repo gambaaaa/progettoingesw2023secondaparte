@@ -1,0 +1,65 @@
+
+{
+  "menuTematici": [
+    {
+      "nome" : "MenuPesce",
+      "piatti" : [
+        {
+          "nome" : "Pasta al salmone",
+          "ricetta" : "Pasta al salmone",
+          "caricoLavoro" : 6.0,
+          "inizioDisponibilita" : "01/01/2023",
+          "fineDisponibilita" : "23/11/2023"
+        },
+        {
+          "nome" : "Branzino alla ligure",
+          "ricetta" : "Branzino alla ligure",
+          "caricoLavoro" : 7.0,
+          "inizioDisponibilita" : "01/01/2023",
+          "fineDisponibilita" : "31/12/2025"
+        }
+      ],
+      "caricoLavoro" : 13.0
+    },
+    {
+      "nome" : "MenuCarne",
+      "piatti" : [
+        {
+          "nome" : "Tagliatelle al ragù",
+          "ricetta" : "Tagliatelle al ragù",
+          "caricoLavoro" : 7.0,
+          "inizioDisponibilita" : "01/01/2023",
+          "fineDisponibilita" : "31/12/2023"
+        },
+        {
+          "nome" : "Bistecca alla fiorentina",
+          "ricetta" : "Bistecca alla fiorentina",
+          "caricoLavoro" : 8.0,
+          "inizioDisponibilita" : "01/01/2023",
+          "fineDisponibilita" : "31/07/2025"
+        }
+      ],
+      "caricoLavoro" : 15.0
+    },
+    {
+      "nome" : "MenuCarnePesce",
+      "piatti" : [
+        {
+          "nome" : "Tagliatelle al ragù",
+          "ricetta" : "Tagliatelle al ragù",
+          "caricoLavoro" : 7.0,
+          "inizioDisponibilita" : "01/01/2023",
+          "fineDisponibilita" : "31/12/2023"
+        },
+        {
+          "nome" : "Branzino alla ligure",
+          "ricetta" : "Branzino alla ligure",
+          "caricoLavoro" : 7.0,
+          "inizioDisponibilita" : "01/01/2023",
+          "fineDisponibilita" : "31/12/2025"
+        }
+      ],
+      "caricoLavoro" : 14.0
+    }
+  ]
+}
