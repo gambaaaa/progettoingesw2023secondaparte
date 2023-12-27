@@ -47,7 +47,7 @@ public class DateUtility {
     // post : valore_ritornato = -1 se prenotazione "è arrivata" almeno ieri ("data prenotazione < data odierna-oggi") - se la data di prenotazione precede quella odierna
     //        valore_ritornato = 0  se la data di prenotazione di p corrisponde/coincide alla/con la data odierna
     //        valore_ritornato = 1  se la data di prenotazione di p segue la data odierna
-    public int almostYesteday(Prenotazione p, int giorniPassati) {
+    public int atLeastYesterday(Prenotazione p, int giorniPassati) {
         //Controllo che d non sia uguale a today ma "minore" --> < 0
         //se ritorna -1 (<=) sicuramente la data di prenotazione "è arrivata" almeno ieri
         return p.getDataPrenotazione().compareTo(dateSinceDayPassed(giorniPassati)); // se si usa DateUtility ==> return almenoIeri(p.getDataPrenotazione)

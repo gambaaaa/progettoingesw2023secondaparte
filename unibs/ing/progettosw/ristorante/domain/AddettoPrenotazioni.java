@@ -98,7 +98,7 @@ public class AddettoPrenotazioni implements Dipendente {
         // Check data corrente e giorno feriale (da lunedì a sabato) != 1 (domenica = 1)
         // Check data in cui ho prenotato - dataPrenotazione con un giorno d'anticipo ("non oggi ma almeno ieri")
 
-        return du.almostYesteday(p, giorniPassati) < 0 &&
+        return du.atLeastYesterday(p, giorniPassati) < 0 &&
                 dataPrenotazione.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY &&
                 p.getData().equals(du.dateSinceDayPassed(giorniPassati));
     }
