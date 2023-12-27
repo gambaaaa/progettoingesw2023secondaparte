@@ -212,7 +212,8 @@ public class FileService {
     }
 
     private List<Ricetta> creaRicette(JSONArray object) {
-        List<Ricetta> ricetteList = new ArrayList();
+        List
+                <Ricetta> ricetteList = new ArrayList();
         for (int i = 0; i < object.length(); i++) {
             JSONObject ricetta = (JSONObject) object.get(i);
             String nome = ricetta.getString("nome");
