@@ -1,15 +1,17 @@
 package unibs.ing.progettosw.ristorante.domain;
 
 import unibs.ing.progettosw.exceptions.ErrorLogger;
+import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.utilities.StringToClassGetter;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.time.LocalDate;
 import java.text.SimpleDateFormat;
-import java.time.ZoneId;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
 
 public class AddettoPrenotazioni implements Dipendente {
 
@@ -23,6 +25,7 @@ public class AddettoPrenotazioni implements Dipendente {
     private List<Prenotazione> prenotazioniAccettate = new ArrayList<>();
     private Gestore gestore = new Gestore();
     private ErrorLogger el = new ErrorLogger();
+    private DateUtility du = new DateUtility();
 
     // costruttore
     // creazione di un AddettoPrenotazioni in base ad un parametro intero
@@ -53,14 +56,10 @@ public class AddettoPrenotazioni implements Dipendente {
             }
             fs.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate", "prenotazioniAccettate");
         } else {
-            createLogError();
+            el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) +
+                    ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.");
             prenotazioniAccettate = null;
         }
-    }
-
-    private void createLogError() throws IOException {
-        el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) +
-                ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.");
     }
 
     // metodo che permette di "accettare"/"validare" - considerare accettata/valida una data prenotazione
@@ -99,9 +98,9 @@ public class AddettoPrenotazioni implements Dipendente {
         // Check data corrente e giorno feriale (da lunedì a sabato) != 1 (domenica = 1)
         // Check data in cui ho prenotato - dataPrenotazione con un giorno d'anticipo ("non oggi ma almeno ieri")
 
-        return almenoIeri(p) < 0 &&
+        return du.almostYesteday(p, giorniPassati) < 0 &&
                 dataPrenotazione.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY &&
-                p.getData().equals(dateSinceDayPassed());
+                p.getData().equals(du.dateSinceDayPassed(giorniPassati));
     }
 
     // metodo che permette di verificare che il carico di lavoro di una data Prenotazione p e di tutte le altre
@@ -159,30 +158,6 @@ public class AddettoPrenotazioni implements Dipendente {
         }
 
         return caricoLavoro;
-    }
-
-    // metodo che restituisce la data del giorno contando i giorni trascorsi.
-    // post : data di (oggi + giorni trascorsi)
-    private Date dateSinceDayPassed() {
-        ZoneId defaultZoneId = ZoneId.systemDefault();
-        LocalDate today = LocalDate.now();
-        today = today.plusDays(giorniPassati);
-        Date todayDate = Date.from(today.atStartOfDay(defaultZoneId).toInstant());
-        return todayDate;
-    }
-
-    // metodo che permette di controllare se una specifica prenotazione in ingresso
-    // è stata effettuata con almeno un giorno d'anticipo/ "almeno ieri" rispetto alla data odierna;
-    // se la data di prenotazione di una specifica prenotazione precede quella odierna-oggi.
-    // Vedi metodo soprastante isDataPrenotazioneValida
-    // pre : p != NULL
-    // post : valore_ritornato = -1 se prenotazione "è arrivata" almeno ieri ("data prenotazione < data odierna-oggi") - se la data di prenotazione precede quella odierna
-    //        valore_ritornato = 0  se la data di prenotazione di p corrisponde/coincide alla/con la data odierna
-    //        valore_ritornato = 1  se la data di prenotazione di p segue la data odierna
-    private int almenoIeri(Prenotazione p) {
-        //Controllo che d non sia uguale a today ma "minore" --> < 0
-        //se ritorna -1 (<=) sicuramente la data di prenotazione "è arrivata" almeno ieri
-        return p.getDataPrenotazione().compareTo(dateSinceDayPassed()); // se si usa DateUtility ==> return almenoIeri(p.getDataPrenotazione)
     }
 
     // metodo che verifica se il numero di coperti di tutte le prenotazioni accettate + il numero di coperti di una data prenotazione

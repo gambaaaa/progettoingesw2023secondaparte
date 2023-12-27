@@ -1,7 +1,6 @@
 package unibs.ing.progettosw.appUtente.view;
 
 import unibs.ing.progettosw.appUtente.controller.UserController;
-import unibs.ing.progettosw.ristorante.domain.Piatto;
 import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.InputDati;
 
@@ -79,7 +78,6 @@ public class UserViewFacade {
         System.out.println("Numero di menu tematici da ordinare: ");
         return InputDati.leggiIntero(1, numeroCoperti - 1);
     }
-
 
 
     // pre : numeroCoperti >= 2 and numeroMenu >= 1 and numeroMenu <= numeroCoperti - 1

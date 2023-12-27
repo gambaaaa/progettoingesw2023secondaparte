@@ -1,12 +1,11 @@
 package unibs.ing.progettosw.ristorante.view;
 
+import unibs.ing.progettosw.exceptions.ErrorLogger;
 import unibs.ing.progettosw.ristorante.controller.Controller;
-import unibs.ing.progettosw.ristorante.domain.*;
-import unibs.ing.progettosw.utilities.InputDati;
 
-import javax.swing.text.View;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.text.ParseException;
 
 import static java.lang.Thread.sleep;
@@ -55,7 +54,10 @@ public class ViewRistorante {
             System.out.print("\nSimulazione cucina...");
             controller.simulaCucina();
             System.out.println("\nFinito!\nChiusura del programma...");
-        } catch (InterruptedException | ParseException e) {
+        } catch (InterruptedException | ParseException | IOException e) {
+            StringWriter sWriter = new StringWriter();
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorLogger.getInstance().logError(sWriter.toString());
             throw new RuntimeException(e);
         }
     }

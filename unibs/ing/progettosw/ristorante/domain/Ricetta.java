@@ -59,7 +59,7 @@ public class Ricetta {
         return nome.equals(this.nome);
     }
 
-    public int quantitaIngredientiRicetta(){
+    public int quantitaIngredientiRicetta() {
         return this.ingredienti.size();
     }
 

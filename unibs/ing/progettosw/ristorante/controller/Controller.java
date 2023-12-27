@@ -3,14 +3,8 @@ package unibs.ing.progettosw.ristorante.controller;
 import unibs.ing.progettosw.ristorante.domain.*;
 import unibs.ing.progettosw.ristorante.view.ViewRistorante;
 
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.HashMap;
-import java.util.Map;
-
-import static java.lang.Thread.sleep;
 
 public class Controller {
     /*
@@ -57,7 +51,7 @@ public class Controller {
     }
 
     // simula il funzionamento della cucina
-    public void simulaCucina() throws ParseException, InterruptedException {
+    public void simulaCucina() throws ParseException, InterruptedException, IOException {
         cucina = new Cucina(magazziniere.creaListaCucina(gestore), gestore, magazzino);
         cucina.eseguiComande();
     }

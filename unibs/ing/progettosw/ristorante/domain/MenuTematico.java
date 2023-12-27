@@ -9,6 +9,7 @@ public class MenuTematico extends Menu {
     private String nome;
     private List<Piatto> piatti;
     private double caricoLavoro;
+
     public MenuTematico(String nome, List<Piatto> piatti, double caricoLavoro) {
         super(nome, piatti, caricoLavoro);
     }

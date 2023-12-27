@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class    Magazziniere implements Dipendente {
+public class Magazziniere implements Dipendente {
     /*
      * Classe che implementa l'interfaccia dipendente e simula le azioni svolte da un magazziniere.
      * */

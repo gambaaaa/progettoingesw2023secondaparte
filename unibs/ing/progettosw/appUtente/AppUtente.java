@@ -1,8 +1,8 @@
 package unibs.ing.progettosw.appUtente;
 
-import java.text.ParseException;
-
 import unibs.ing.progettosw.appUtente.view.UserView;
+
+import java.text.ParseException;
 
 public class AppUtente {
     /*

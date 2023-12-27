@@ -2,8 +2,10 @@ package unibs.ing.progettosw.utilities;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import unibs.ing.progettosw.exceptions.ErrorLogger;
 import unibs.ing.progettosw.ristorante.domain.*;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ public class JSONFileReader extends JSONFile {
     private final StringToDateConverter std = new StringToDateConverter();
     private final StringToClassGetter stc = new StringToClassGetter();
     private final JSONUtilities ju = new JSONUtilities();
+    private final ErrorLogger el = new ErrorLogger();
 
     public void setupRistorante(String path) {
         JSONObject object;
@@ -29,12 +32,14 @@ public class JSONFileReader extends JSONFile {
         Ristorante.getInstance(nome, postiSedere, caricoLavoroPersona);
     }
 
-    public List<Prenotazione> leggiPrenotazioni(String path, String key) throws ParseException {
+    public List<Prenotazione> leggiPrenotazioni(String path, String key) throws ParseException, IOException {
         JSONObject object;
         object = readFromJSON(path);
         JSONArray prenotazioni = object.getJSONArray(key);
 
         if (prenotazioni.isEmpty()) {
+            el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) + ": Attenzione!\nNessuna prenotazione caricata. " +
+                    "Assicurarsi che sia tutto corretto.");
             return null;
         }
         return creaPrenotazioni(prenotazioni);

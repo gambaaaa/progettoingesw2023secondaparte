@@ -1,16 +1,21 @@
 package unibs.ing.progettosw.ristorante.domain;
 
+import unibs.ing.progettosw.exceptions.ErrorLogger;
 import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.utilities.StringToClassGetter;
 
+import java.io.IOException;
 import java.text.ParseException;
-import java.util.*;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class Cucina {
 
     /*
-    * Classe che rappresenta la Cucina del ristorante.
-    * */
+     * Classe che rappresenta la Cucina del ristorante.
+     * */
 
     //Attributi privati
     private Map<IMerce, Integer> registroCucina;//Integer è la quantità in cucina che deve essere <= di quella disponibile in maghazizino
@@ -20,6 +25,7 @@ public class Cucina {
     private FileService fs = new FileService();
     private Gestore gestore;
     private StringToClassGetter stc = new StringToClassGetter();
+    private ErrorLogger el = new ErrorLogger();
 
     // invariante di classe
     public Cucina(Map<IMerce, Integer> registroCucina, Gestore gestore, Magazzino magazzino) {
@@ -31,13 +37,16 @@ public class Cucina {
     // metodo utilizzato per "simulare" le comande di una cucina, a partire dalla lista delle prenotazioni accettate
     // pre : -
     // post :
-    public void eseguiComande() throws ParseException, InterruptedException {
+    public void eseguiComande() throws ParseException, InterruptedException, IOException {
         List<Prenotazione> listaPrenotazioniAccettate = recuperaPrenotazioniAccettate();
 
         if (listaPrenotazioniAccettate != null) {
             for (Prenotazione p : listaPrenotazioniAccettate) {
                 if (p != null) {
                     cucinaPiatto(p);
+                } else {
+                    el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione trovata. " +
+                            "Assicurarsi che sia tutto corretto.");
                 }
             }
         } else {

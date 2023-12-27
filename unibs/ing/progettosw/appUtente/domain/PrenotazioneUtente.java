@@ -1,9 +1,7 @@
 package unibs.ing.progettosw.appUtente.domain;
 
-import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
-
-import java.text.ParseException;
+import unibs.ing.progettosw.utilities.FileService;
 
 public class PrenotazioneUtente {
     /*

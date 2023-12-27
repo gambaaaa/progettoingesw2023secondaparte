@@ -274,7 +274,7 @@ public class Gestore implements Dipendente {
         return countValidi;
     }
 
-    public List<Piatto> getListaPiattiValidi(int dayPassed){
+    public List<Piatto> getListaPiattiValidi(int dayPassed) {
         List<Piatto> piattiValidi = new ArrayList<>();
         for (Piatto aPiatto : piatti) {
             if (du.getDatePassedSinceToday(dayPassed).after(aPiatto.getInizioDisponibilita()) && du.getDatePassedSinceToday(dayPassed).before(aPiatto.getFineDisponibilita())) {
