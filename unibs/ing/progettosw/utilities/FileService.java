@@ -3,6 +3,8 @@ package unibs.ing.progettosw.utilities;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import unibs.ing.progettosw.exceptions.ErrorDialog;
+import unibs.ing.progettosw.exceptions.ErrorLogger;
 import unibs.ing.progettosw.ristorante.domain.*;
 
 import java.io.*;
@@ -257,23 +259,34 @@ public class FileService {
 
         File filePath = new File(path.substring(1));
 
-        //Momentaneamente lasciamo questo codice (per poter chiudere il fileWriter) .  Funzionante !!
+        // DA SISTEMARE
         FileWriter fileWriter = null;
+        StringWriter sWriter = null;
         try {
             fileWriter = new FileWriter(filePath);
+            sWriter = new StringWriter();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
             fileWriter.write(prenotazioniObj.toString());
             fileWriter.flush();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione"); // per l'utente
+            ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
             fileWriter.close();
+            sWriter.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione"); // per l'utente
+            ErrorLogger.getInstance().logError(sWriter.toString());
         }
     }
 
@@ -281,6 +294,7 @@ public class FileService {
         JSONObject object = readFromJSON(path);
         JSONArray prenotazioni = object.getJSONArray(key);
         FileWriter fileWriter = null;
+        StringWriter sWriter = null;
 
         path = path.replace('/', '\\');
 
@@ -292,19 +306,29 @@ public class FileService {
 
         try {
             fileWriter = new FileWriter(filePath);
+            sWriter = new StringWriter();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
             fileWriter.write(prenotazioniObj.toString());
             fileWriter.flush();
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
             fileWriter.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorLogger.getInstance().logError(sWriter.toString());
         }
     }
 
