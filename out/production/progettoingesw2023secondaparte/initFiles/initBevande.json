@@ -1,0 +1,64 @@
+{
+  "bevande": [
+    {
+      "nome": "Acqua naturale",
+      "quantita": 300,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Acqua frizzante",
+      "quantita": 300,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Vino bianco",
+      "quantita": 100,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Coca Cola",
+      "quantita": 200,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Vino rosso",
+      "quantita": 100,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Vino rosé",
+      "quantita": 100,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Birra ",
+      "quantita": 300,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Fanta",
+      "quantita": 200,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Sprite",
+      "quantita": 200,
+      "UdM": "L",
+      "consumoProCapite": 1
+    },
+    {
+      "nome": "Coca cola zero",
+      "quantita": 200,
+      "UdM": "L",
+      "consumoProCapite": 1
+    }
+  ]
+}
