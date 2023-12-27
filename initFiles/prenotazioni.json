@@ -1,4 +1,16 @@
 {
   "prenotazioni": [
+    {
+      "menuTematicoPrenotato": {
+        "MenuCarnePesce": 1,
+        "MenuCarne": 1
+      },
+      "numeroCoperti": 3,
+      "dataPrenotazione": "Wed Dec 27 00:00:00 CET 2023",
+      "data": "Sun Jan 01 00:00:00 CET 2023",
+      "piattoPrenotato": {
+        "Pizza margherita": 1
+      }
+    }
   ]
 }

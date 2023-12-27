@@ -1,6 +1,8 @@
 package unibs.ing.progettosw.ristorante.view;
 
+import unibs.ing.progettosw.exceptions.ErrorDialog;
 import unibs.ing.progettosw.exceptions.ErrorLogger;
+import unibs.ing.progettosw.ristorante.Initializer;
 import unibs.ing.progettosw.ristorante.controller.Controller;
 
 import java.io.IOException;
@@ -16,18 +18,25 @@ public class ViewRistorante {
      * */
     private Controller controller;
 
-    public ViewRistorante() throws ParseException {
+    public ViewRistorante() {
         controller = new Controller();
     }
 
     // carica le prenotazioni, tenendo conto "dello scorrere del tempo".
     // pre : giorniPassati >= 0
     // post : salva prenotazioni su file.
-    public void caricaPrenotazioni(int giorniPassati) throws IOException, ParseException, InterruptedException {
+    public void caricaPrenotazioni(int giorniPassati) {
         System.out.println("Caricamento delle prenotazioni...");
         controller.caricaGestore();
         controller.caricaAddetto(giorniPassati);
-        sleep(3000);
+        try {
+            sleep(3000);
+        } catch (InterruptedException e){
+            StringWriter sWriter = new StringWriter();
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
+            ErrorLogger.getInstance().logError(sWriter.toString());
+        }
         System.out.println("Fatto! Ci vediamo al ristorante!\n");
     }
 
@@ -54,11 +63,11 @@ public class ViewRistorante {
             System.out.print("\nSimulazione cucina...");
             controller.simulaCucina();
             System.out.println("\nFinito!\nChiusura del programma...");
-        } catch (InterruptedException | ParseException | IOException e) {
+        } catch (InterruptedException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
             ErrorLogger.getInstance().logError(sWriter.toString());
-            throw new RuntimeException(e);
         }
     }
 }
