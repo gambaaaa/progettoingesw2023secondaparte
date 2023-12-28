@@ -66,7 +66,7 @@ public class JSONFileWriter extends JSONFile {
 
     public void scriviPrenotazioniAccettateSuFile(List<Prenotazione> prenotazioniAccettate, String path, String typePrenotazione) {
         File filePath = creaFilePath(path);
-        creaPrenotazioniVuote(path.substring(1));
+        creaPrenotazioniVuote(path);
         JSONObject prenotazioniObj = new JSONObject();
         prenotazioniObj.put(typePrenotazione, prenotazioniAccettate);
 
