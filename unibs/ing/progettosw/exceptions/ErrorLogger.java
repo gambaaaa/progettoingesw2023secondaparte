@@ -17,12 +17,6 @@ public class ErrorLogger {
 
     public void logError(String errorMessage) {
         TXTFileWriter jfw = new TXTFileWriter();
-        try {
-            jfw.scriviStringaSuFile(errorMessage, "logs\\errorlogs.log", true);
-        } catch (IOException e) {
-            StringWriter sWriter = new StringWriter();
-            e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Il programma non può scrivere sul file errorlogs.log.\n");
-        }
+        jfw.scriviStringaSuFile(errorMessage, "logs\\errorlogs.log", true);
     }
 }
