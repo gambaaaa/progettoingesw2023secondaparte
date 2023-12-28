@@ -17,7 +17,7 @@ public class TXTFileWriter {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError("Errore nella scrittura del file.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }
 
@@ -28,11 +28,11 @@ public class TXTFileWriter {
             fw.write(message);
             fw.flush();
             fw.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError("Errore nella scrittura del file.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }
 }

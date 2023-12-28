@@ -1,7 +1,6 @@
 package unibs.ing.progettosw.ristorante.domain;
 
 import unibs.ing.progettosw.utilities.DateUtility;
-import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.utilities.JSONFileReader;
 
 import java.util.ArrayList;

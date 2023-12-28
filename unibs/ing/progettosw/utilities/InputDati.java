@@ -45,9 +45,9 @@ public class InputDati {
             if (valoreLetto >= minimo && valoreLetto <= massimo)
                 finito = true;
             else if (valoreLetto < minimo)
-                ErrorDialog.getInstance().logError(ERRORE_MINIMO + minimo+"\n");
+                ErrorDialog.getInstance().logError(ERRORE_MINIMO + minimo + "\n");
             else
-                ErrorDialog.getInstance().logError(ERRORE_MASSIMO + massimo+"\n");
+                ErrorDialog.getInstance().logError(ERRORE_MASSIMO + massimo + "\n");
         } while (!finito);
 
         return valoreLetto;

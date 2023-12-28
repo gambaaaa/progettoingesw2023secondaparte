@@ -5,9 +5,6 @@ import unibs.ing.progettosw.exceptions.ErrorDialog;
 import unibs.ing.progettosw.ristorante.Initializer;
 import unibs.ing.progettosw.utilities.*;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 public class StartFacade {
     private Initializer init = new Initializer();
     private AppUtente appUtente = new AppUtente();
@@ -50,7 +47,7 @@ public class StartFacade {
                 } else {
                     init.initPrenotazioni(giorniPassati);
                 }
-                tfw.scriviStringaSuFile(String.valueOf(giorniPassati),"initFiles\\giorniPassati.txt", false);
+                tfw.scriviStringaSuFile(String.valueOf(giorniPassati), "initFiles\\giorniPassati.txt", false);
                 break;
             case 2:
                 // se è domenica il ristorante è chiuso, si passa automaticamente al giorno successivo

@@ -94,7 +94,7 @@ public class Cucina {
                     StringWriter sWriter = new StringWriter();
                     e.printStackTrace(new PrintWriter(sWriter));
                     ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
-                    ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+                    ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
                 }
             }
         }
@@ -122,7 +122,7 @@ public class Cucina {
                 StringWriter sWriter = new StringWriter();
                 e.printStackTrace(new PrintWriter(sWriter));
                 ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
-                ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+                ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
             }
         }
     }
