@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="progettoingesw2023secondaparte:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/progettoingesw2023secondaparte_jar</output-path>
+    <root id="archive" name="progettoingesw2023secondaparte.jar">
+      <element id="module-output" name="progettoingesw2023secondaparte" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/json.jar" path-in-jar="/" />
+      <element id="library" level="project" name="json1" />
+    </root>
+  </artifact>
+</component>
