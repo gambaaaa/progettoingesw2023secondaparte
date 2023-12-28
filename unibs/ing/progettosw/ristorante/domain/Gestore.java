@@ -12,7 +12,6 @@ public class Gestore implements Dipendente {
     /*
      * Classe che implementa l'interfaccia dipendente e simula le azioni svolte da un gestore di ristoranti.
      * */
-    private FileService fs = new FileService();
     private JSONFileReader jfr = new JSONFileReader();
     private DateUtility du = new DateUtility();
     private Ristorante ristorante;

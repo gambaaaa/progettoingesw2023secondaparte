@@ -9,7 +9,7 @@ public class JSONFile {
 
     protected JSONObject readFromJSON(String path) {
         JSONObject object;
-        InputStream is = FileService.class.getResourceAsStream(path);
+        InputStream is = JSONFile.class.getResourceAsStream(path);
         JSONTokener tokener = new JSONTokener(is);
         object = new JSONObject(tokener);
 

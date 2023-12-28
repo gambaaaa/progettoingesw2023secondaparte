@@ -8,7 +8,7 @@ import java.text.ParseException;
  * */
 public class Start {
 
-    public static void main(String[] args) throws IOException, ParseException, InterruptedException {
+    public static void main(String[] args) {
         StartFacade sf = new StartFacade();
         sf.displayStartMenu();
     }

@@ -21,11 +21,18 @@ public class TXTFileWriter {
         }
     }
 
-    public void scriviStringaSuFile(String message, String path, boolean append) throws IOException {
-        File filePath = new File(path);
-        FileWriter fw = new FileWriter(filePath, append);
-        fw.write(message);
-        fw.flush();
-        fw.close();
+    public void scriviStringaSuFile(String message, String path, boolean append) {
+        try {
+            File filePath = new File(path);
+            FileWriter fw = new FileWriter(filePath, append);
+            fw.write(message);
+            fw.flush();
+            fw.close();
+        } catch (IOException e){
+            StringWriter sWriter = new StringWriter();
+            e.printStackTrace(new PrintWriter(sWriter));
+            ErrorDialog.getInstance().logError("Errore nella scrittura del file.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+        }
     }
 }
