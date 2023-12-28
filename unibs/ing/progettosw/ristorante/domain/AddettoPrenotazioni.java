@@ -56,7 +56,7 @@ public class AddettoPrenotazioni implements Dipendente {
             }
             jfw.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
         } else {
-            el.logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) +
+            ErrorLogger.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) +
                     ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.\n");
             prenotazioniAccettate = null;
         }

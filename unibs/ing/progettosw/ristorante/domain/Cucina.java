@@ -46,7 +46,7 @@ public class Cucina {
                 if (p != null) {
                     cucinaPiatto(p);
                 } else {
-                    el.logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione trovata. " +
+                    ErrorLogger.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione trovata. " +
                             "Assicurarsi che sia tutto corretto.\n");
                 }
             }

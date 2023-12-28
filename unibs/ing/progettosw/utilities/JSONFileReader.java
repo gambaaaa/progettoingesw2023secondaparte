@@ -39,7 +39,7 @@ public class JSONFileReader extends JSONFile {
         JSONArray prenotazioni = object.getJSONArray(key);
 
         if (prenotazioni.isEmpty()) {
-            el.logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione caricata. " +
+            ErrorLogger.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione caricata. " +
                     "Assicurarsi che sia tutto corretto.\n");
             return null;
         }
