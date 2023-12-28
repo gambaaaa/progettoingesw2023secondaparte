@@ -34,8 +34,8 @@ public class ViewRistorante {
         } catch (InterruptedException e){
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         System.out.println("Fatto! Ci vediamo al ristorante!\n");
     }
@@ -66,8 +66,8 @@ public class ViewRistorante {
         } catch (InterruptedException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
     }
 }

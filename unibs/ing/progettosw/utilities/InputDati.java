@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputDati {
-    private final static String ERRORE_FORMATO = "Attenzione: il dato inserito non e' nel formato corretto";
+    private final static String ERRORE_FORMATO = "Attenzione: il dato inserito non e' nel formato corretto.\n";
     private final static String ERRORE_MINIMO = "Attenzione: e' richiesto un valore maggiore o uguale a ";
     private final static String ERRORE_MASSIMO = "Attenzione: e' richiesto un valore minore o uguale a ";
     private final static ErrorDialog ed = new ErrorDialog();
@@ -46,9 +46,9 @@ public class InputDati {
             if (valoreLetto >= minimo && valoreLetto <= massimo)
                 finito = true;
             else if (valoreLetto < minimo)
-                ed.logError(ERRORE_MINIMO + minimo);
+                ed.logError(ERRORE_MINIMO + minimo+"\n");
             else
-                ed.logError(ERRORE_MASSIMO + massimo);
+                ed.logError(ERRORE_MASSIMO + massimo+"\n");
         } while (!finito);
 
         return valoreLetto;

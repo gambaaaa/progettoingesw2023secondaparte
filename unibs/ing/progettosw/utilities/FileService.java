@@ -267,16 +267,16 @@ public class FileService {
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         try {
             fileWriter.write(prenotazioniObj.toString());
             fileWriter.flush();
         } catch (Exception e) {
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida."); // per l'utente
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida.\n"); // per l'utente
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         try {
             fileWriter.close();
@@ -284,8 +284,8 @@ public class FileService {
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante la chiusura dello stream."); // per l'utente
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore durante la chiusura dello stream.\n"); // per l'utente
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
     }
 
@@ -309,8 +309,8 @@ public class FileService {
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         try {
             fileWriter.write(prenotazioniObj.toString());
@@ -318,16 +318,16 @@ public class FileService {
         } catch (Exception e) {
             //e.printStackTrace();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         try {
             fileWriter.close();
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore duurante la chiusura dello stream.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore duurante la chiusura dello stream.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
     }
 

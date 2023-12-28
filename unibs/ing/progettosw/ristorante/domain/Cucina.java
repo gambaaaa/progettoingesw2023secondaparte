@@ -46,12 +46,12 @@ public class Cucina {
                 if (p != null) {
                     cucinaPiatto(p);
                 } else {
-                    el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione trovata. " +
-                            "Assicurarsi che sia tutto corretto.");
+                    el.logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione trovata. " +
+                            "Assicurarsi che sia tutto corretto.\n");
                 }
             }
         } else {
-            System.out.println("\nNon ci sono prenotazioni oggi, si torna a casa...");
+            System.out.println("\nNon ci sono prenotazioni oggi, si torna a casa...\n");
         }
     }
 
@@ -94,8 +94,8 @@ public class Cucina {
                 } catch (InterruptedException e) {
                     StringWriter sWriter = new StringWriter();
                     e.printStackTrace(new PrintWriter(sWriter));
-                    ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
-                    ErrorLogger.getInstance().logError(sWriter.toString());
+                    ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
+                    ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
                 }
             }
         }
@@ -122,8 +122,8 @@ public class Cucina {
             } catch (InterruptedException e) {
                 StringWriter sWriter = new StringWriter();
                 e.printStackTrace(new PrintWriter(sWriter));
-                ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.");
-                ErrorLogger.getInstance().logError(sWriter.toString());
+                ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
+                ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
             }
         }
     }
