@@ -3,8 +3,8 @@ package unibs.ing.progettosw.ristorante.domain;
 public interface IMerce {
 
     /*
-    * Interfaccia che contiene metodi per gestire opportunamente un tipo di IMerce.
-    * */
+     * Interfaccia che contiene metodi per gestire opportunamente un tipo di IMerce.
+     * */
 
     // metodo che restituisce true o false sulla base del nome specificato(parametro di ingresso al metodo).
     // in particolare serve per effettuare un check sull'esistenza/sulla presenza dell'ingrediente(tipo di IMerce) specificato

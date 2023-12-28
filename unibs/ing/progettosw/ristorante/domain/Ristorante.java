@@ -4,19 +4,23 @@ import java.util.List;
 import java.util.Map;
 
 public class Ristorante {
+    private static Ristorante ristorante;
     /*
      * Classe che implementa il pattern Singleton per rappresentare il fatto che esiste una sola instanza di Ristorante
      * */
     private String nome;
     private int postiSedere;
     private int caricoLavoroPersona;
-
     private Map<String, Ricetta> ricettario;
     private List<MenuTematico> menuTematici;
     private List<Piatto> menuCarta;
     private List<Prenotazione> prenotazioni;
 
-    private static Ristorante ristorante;
+    private Ristorante(String nome, int postiSedere, int caricoLavoroPersona) {
+        this.nome = nome;
+        this.postiSedere = postiSedere;
+        this.caricoLavoroPersona = caricoLavoroPersona;
+    }
 
     // metodo pubblico per creare un oggetto statico di tipo Ristorante
     // pre : nome not empty
@@ -32,12 +36,6 @@ public class Ristorante {
 
     public static Ristorante getInstance() {
         return ristorante;
-    }
-
-    private Ristorante(String nome, int postiSedere, int caricoLavoroPersona) {
-        this.nome = nome;
-        this.postiSedere = postiSedere;
-        this.caricoLavoroPersona = caricoLavoroPersona;
     }
 
     public String getNome() {

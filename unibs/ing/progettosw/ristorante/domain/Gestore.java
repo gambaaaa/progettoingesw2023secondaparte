@@ -2,8 +2,8 @@ package unibs.ing.progettosw.ristorante.domain;
 
 import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.FileService;
+import unibs.ing.progettosw.utilities.JSONFileReader;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +13,7 @@ public class Gestore implements Dipendente {
      * Classe che implementa l'interfaccia dipendente e simula le azioni svolte da un gestore di ristoranti.
      * */
     private FileService fs = new FileService();
+    private JSONFileReader jfr = new JSONFileReader();
     private DateUtility du = new DateUtility();
     private Ristorante ristorante;
     private List<IMerce> bevande;
@@ -27,7 +28,7 @@ public class Gestore implements Dipendente {
     }
 
     // metodo che contiene i vari metodi per inizializzare le informazioni principali del ristorante, ingredienti e ricette
-    public void initAll() throws ParseException {
+    public void initAll() {
         initRistorante();
         initBevande();
         initGenereExtra();
@@ -65,37 +66,37 @@ public class Gestore implements Dipendente {
 
     // inizializza le informazioni del ristorante (nome ristorante, posti a sedere, carico di lavoro) leggendole da un file esterno
     private void initRistorante() {
-        fs.setupRistorante("/initFiles/initRistorante.json");
+        jfr.setupRistorante("/initFiles/initRistorante.json");
         ristorante = Ristorante.getInstance();
     }
 
     // inizializza le bevande del ristorante leggendole da un file esterno
     private void initBevande() {
-        bevande = fs.setupBevande("/initFiles/initBevande.json", "bevande");
+        bevande = jfr.setupBevande("/initFiles/initBevande.json", "bevande");
     }
 
     // inizializza i generiExtra del ristorante leggendoli da un file esterno
     private void initGenereExtra() {
-        generiExtra = fs.setupGeneriExtra("/initFiles/initGeneri.json", "generiExtra");
+        generiExtra = jfr.setupGeneriExtra("/initFiles/initGeneri.json", "generiExtra");
     }
 
     // inizializza le ricette del ristorante leggendole da un file esterno
     private void initRicette() {
-        ricette = fs.setupRicetta("/initFiles/initRicette.json");
+        ricette = jfr.setupRicetta("/initFiles/initRicette.json");
     }
 
     // inizializza gli ingredienti del ristorante leggendoli da un file esterno
-    private void initIngredienti() throws ParseException {
-        ingredienti = fs.setupIngredienti("/initFiles/initIngredienti.json", "ingredienti");
+    private void initIngredienti() {
+        ingredienti = jfr.setupIngredienti("/initFiles/initIngredienti.json", "ingredienti");
     }
 
     // inizializza i piatti del ristorante leggendoli da un file esterno
-    private void initPiatti() throws ParseException {
-        piatti = fs.setupPiatti("/initFiles/initPiatti.json", "piatti", ricette);
+    private void initPiatti() {
+        piatti = jfr.setupPiatti("/initFiles/initPiatti.json", "piatti", ricette);
     }
 
     // inizializza i menu alla carta e tematici del ristorante leggendoli da un file esterno
-    private void initMenu() throws ParseException {
+    private void initMenu() {
         initMenuCarta();
         initMenuTematico();
     }
@@ -108,8 +109,8 @@ public class Gestore implements Dipendente {
     }
 
     // inizializza i menu alla carta validi del ristorante leggendoli da un file esterno
-    private void initMenuTematico() throws ParseException {
-        this.menuT = fs.setupMenuTematico("/initFiles/initMenu.json", "menuTematici", ricette);
+    private void initMenuTematico() {
+        this.menuT = jfr.setupMenuTematico("/initFiles/initMenu.json", "menuTematici", ricette);
     }
 
     // crea la lista dei piatti validi
@@ -274,7 +275,7 @@ public class Gestore implements Dipendente {
         return countValidi;
     }
 
-    public List<Piatto> getListaPiattiValidi(int dayPassed){
+    public List<Piatto> getListaPiattiValidi(int dayPassed) {
         List<Piatto> piattiValidi = new ArrayList<>();
         for (Piatto aPiatto : piatti) {
             if (du.getDatePassedSinceToday(dayPassed).after(aPiatto.getInizioDisponibilita()) && du.getDatePassedSinceToday(dayPassed).before(aPiatto.getFineDisponibilita())) {

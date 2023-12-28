@@ -261,14 +261,13 @@ public class FileService {
 
         // DA SISTEMARE
         FileWriter fileWriter = null;
-        StringWriter sWriter = null;
+        StringWriter sWriter = new StringWriter();
         try {
             fileWriter = new FileWriter(filePath);
-            sWriter = new StringWriter();
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.");
             ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
@@ -276,7 +275,7 @@ public class FileService {
             fileWriter.flush();
         } catch (Exception e) {
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione"); // per l'utente
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida."); // per l'utente
             ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
@@ -285,7 +284,7 @@ public class FileService {
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione"); // per l'utente
+            ErrorDialog.getInstance().logError("Errore durante la chiusura dello stream."); // per l'utente
             ErrorLogger.getInstance().logError(sWriter.toString());
         }
     }
@@ -294,7 +293,8 @@ public class FileService {
         JSONObject object = readFromJSON(path);
         JSONArray prenotazioni = object.getJSONArray(key);
         FileWriter fileWriter = null;
-        StringWriter sWriter = null;
+        StringWriter sWriter = new StringWriter();
+
 
         path = path.replace('/', '\\');
 
@@ -306,11 +306,10 @@ public class FileService {
 
         try {
             fileWriter = new FileWriter(filePath);
-            sWriter = new StringWriter();
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.");
             ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
@@ -319,7 +318,7 @@ public class FileService {
         } catch (Exception e) {
             //e.printStackTrace();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida.");
             ErrorLogger.getInstance().logError(sWriter.toString());
         }
         try {
@@ -327,7 +326,7 @@ public class FileService {
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore durante il salvataggio della prenotazione");
+            ErrorDialog.getInstance().logError("Errore duurante la chiusura dello stream.");
             ErrorLogger.getInstance().logError(sWriter.toString());
         }
     }

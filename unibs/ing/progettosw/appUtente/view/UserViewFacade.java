@@ -1,11 +1,9 @@
 package unibs.ing.progettosw.appUtente.view;
 
 import unibs.ing.progettosw.appUtente.controller.UserController;
-import unibs.ing.progettosw.ristorante.domain.Piatto;
 import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.InputDati;
 
-import java.text.ParseException;
 import java.util.Map;
 
 public class UserViewFacade {
@@ -13,10 +11,10 @@ public class UserViewFacade {
     private UserController controller = new UserController();
     private DateUtility du = new DateUtility();
 
-    public UserViewFacade() throws ParseException {
+    public UserViewFacade() {
     }
 
-    public void startViewFacade(int dayPassed) throws ParseException {
+    public void startViewFacade(int dayPassed) {
         controller.start();
 
         System.out.println("Inserire la data della prenotazione: (formato dd/MM/yyyy)");
@@ -79,7 +77,6 @@ public class UserViewFacade {
         System.out.println("Numero di menu tematici da ordinare: ");
         return InputDati.leggiIntero(1, numeroCoperti - 1);
     }
-
 
 
     // pre : numeroCoperti >= 2 and numeroMenu >= 1 and numeroMenu <= numeroCoperti - 1

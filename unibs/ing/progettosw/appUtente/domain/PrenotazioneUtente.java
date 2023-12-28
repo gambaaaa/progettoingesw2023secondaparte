@@ -1,15 +1,13 @@
 package unibs.ing.progettosw.appUtente.domain;
 
-import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
-
-import java.text.ParseException;
+import unibs.ing.progettosw.utilities.JSONFileWriter;
 
 public class PrenotazioneUtente {
     /*
      * Classe utilizzata per salvare su file una prenotazione.
      * */
-    private FileService fs = new FileService();
+    private JSONFileWriter jfw = new JSONFileWriter();
 
     public PrenotazioneUtente() {
     }
@@ -18,6 +16,6 @@ public class PrenotazioneUtente {
     // pre : prenotazione not null
     // post : salva la prenotazione su file
     public void creaPrenotazione(Prenotazione p) {
-        fs.scriviPrenotazioneSuFile(p, "/initFiles/prenotazioni.json", "prenotazioni", "prenotazioni");
+        jfw.scriviPrenotazioneSuFile(p, "/initFiles/prenotazioni.json", "prenotazioni", "prenotazioni");
     }
 }
