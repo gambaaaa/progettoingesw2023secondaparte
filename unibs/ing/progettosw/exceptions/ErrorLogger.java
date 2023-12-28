@@ -22,7 +22,7 @@ public class ErrorLogger {
         } catch (IOException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Il programma non può scrivere sul file errorlogs.log");
+            ErrorDialog.getInstance().logError("Il programma non può scrivere sul file errorlogs.log.\n");
         }
     }
 }

@@ -25,8 +25,8 @@ public class StringToDateConverter {
         } catch (ParseException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore nella formattazione della data.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore nella formattazione della data.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         return null;
     }
@@ -41,8 +41,8 @@ public class StringToDateConverter {
         } catch (ParseException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("Errore nella formattazione della data.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("Errore nella formattazione della data.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         return null;
     }

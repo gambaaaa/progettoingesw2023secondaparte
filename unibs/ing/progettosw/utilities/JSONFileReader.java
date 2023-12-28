@@ -39,8 +39,8 @@ public class JSONFileReader extends JSONFile {
         JSONArray prenotazioni = object.getJSONArray(key);
 
         if (prenotazioni.isEmpty()) {
-            el.logError(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date()) + ": Attenzione!\nNessuna prenotazione caricata. " +
-                    "Assicurarsi che sia tutto corretto.");
+            ErrorLogger.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Attenzione! Nessuna prenotazione caricata. " +
+                    "Assicurarsi che sia tutto corretto.\n");
             return null;
         }
         return creaPrenotazioni(prenotazioni);
@@ -170,8 +170,8 @@ public class JSONFileReader extends JSONFile {
             } catch (ParseException e) {
                 StringWriter sWriter = new StringWriter();
                 e.printStackTrace(new PrintWriter(sWriter));
-                ErrorDialog.getInstance().logError("Errore nella lettura di un campo del JSON.");
-                ErrorLogger.getInstance().logError(sWriter.toString());
+                ErrorDialog.getInstance().logError("Errore nella lettura di un campo del JSON.\n");
+                ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
             }
         }
 
@@ -235,8 +235,8 @@ public class JSONFileReader extends JSONFile {
         } catch (FileNotFoundException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError("File non trovato. Controlla se il file non sia stato cancellato per errore.");
-            ErrorLogger.getInstance().logError(sWriter.toString());
+            ErrorDialog.getInstance().logError("File non trovato. Controlla se il file non sia stato cancellato per errore.\n");
+            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
         }
         return giorniPassati;
     }
