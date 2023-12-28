@@ -1,8 +1,5 @@
 package unibs.ing.progettosw;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 /*
  * Classe che rappresenta la classe "principale" contenente il metodo main da cui evolve l'applicazione.
  * */

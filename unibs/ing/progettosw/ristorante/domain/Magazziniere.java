@@ -8,23 +8,23 @@ public class Magazziniere implements Dipendente {
     /*
      * Classe che implementa l'interfaccia dipendente e simula le azioni svolte da un magazziniere.
      * */
-    private Magazzino magazzino;
+    private Gestore gestore;
     private Map<IMerce, Integer> listaDellaSpesa;
 
     public Magazziniere(Gestore gestore) {
-        creaRegistroMagazzino(gestore);
+        this.gestore = gestore;
+        creaRegistroMagazzino();
     }
 
     // Metodo che utlizza la lista della spesa per creare l'oggetto magazzino
-    private void creaRegistroMagazzino(Gestore gestore) {
-        this.listaDellaSpesa = creaListaDellaSpesa(gestore);
-        this.magazzino = new Magazzino(listaDellaSpesa);
+    private void creaRegistroMagazzino() {
+        this.listaDellaSpesa = creaListaDellaSpesa();
     }
 
     // metodo che crea la lista della spesa, contenente le bevande, generiextra, ingredienti e la loro relativa quantità
     // pre : gestore not null
     // post : listaDellaSpesa not null, listaDellaSpesa not empty
-    public Map<IMerce, Integer> creaListaDellaSpesa(Gestore gestore) {
+    private Map<IMerce, Integer> creaListaDellaSpesa() {
         this.listaDellaSpesa = new HashMap<>();
 
         int quantitaMerceMagazzino = 5000;
@@ -33,6 +33,10 @@ public class Magazziniere implements Dipendente {
         aggiungiMerce(gestore.getGeneriExtra(), quantitaMerceMagazzino, listaDellaSpesa);
         aggiungiMerce(gestore.getIngredienti(), quantitaMerceMagazzino, listaDellaSpesa);
 
+        return listaDellaSpesa;
+    }
+
+    public Map<IMerce, Integer> getListaDellaSpesa() {
         return listaDellaSpesa;
     }
 

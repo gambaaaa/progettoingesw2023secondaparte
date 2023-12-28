@@ -2,13 +2,10 @@ package unibs.ing.progettosw.ristorante.view;
 
 import unibs.ing.progettosw.exceptions.ErrorDialog;
 import unibs.ing.progettosw.exceptions.ErrorLogger;
-import unibs.ing.progettosw.ristorante.Initializer;
 import unibs.ing.progettosw.ristorante.controller.Controller;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.text.ParseException;
 
 import static java.lang.Thread.sleep;
 
@@ -31,11 +28,11 @@ public class ViewRistorante {
         controller.caricaAddetto(giorniPassati);
         try {
             sleep(3000);
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
         System.out.println("Fatto! Ci vediamo al ristorante!\n");
     }
@@ -67,7 +64,7 @@ public class ViewRistorante {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }
 }

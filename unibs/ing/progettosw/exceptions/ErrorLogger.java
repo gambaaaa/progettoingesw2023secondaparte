@@ -2,10 +2,6 @@ package unibs.ing.progettosw.exceptions;
 
 import unibs.ing.progettosw.utilities.TXTFileWriter;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 public class ErrorLogger {
     private static ErrorDialog error;
 

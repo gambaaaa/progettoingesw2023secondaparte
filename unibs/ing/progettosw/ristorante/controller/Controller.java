@@ -44,7 +44,7 @@ public class Controller {
 
     // carica le informazioni relative al magazzino creando la lista della spesa
     public void simulaMagazzino() {
-        magazzino = new Magazzino(magazziniere.creaListaDellaSpesa(gestore));
+        magazzino = new Magazzino(magazziniere.getListaDellaSpesa());
     }
 
     // simula il funzionamento della cucina

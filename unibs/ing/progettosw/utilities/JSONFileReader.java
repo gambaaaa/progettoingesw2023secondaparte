@@ -171,7 +171,7 @@ public class JSONFileReader extends JSONFile {
                 StringWriter sWriter = new StringWriter();
                 e.printStackTrace(new PrintWriter(sWriter));
                 ErrorDialog.getInstance().logError("Errore nella lettura di un campo del JSON.\n");
-                ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+                ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
             }
         }
 
@@ -236,7 +236,7 @@ public class JSONFileReader extends JSONFile {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError("File non trovato. Controlla se il file non sia stato cancellato per errore.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
         return giorniPassati;
     }
