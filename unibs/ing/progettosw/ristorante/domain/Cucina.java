@@ -26,7 +26,6 @@ public class Cucina {
     private JSONFileReader jfr = new JSONFileReader();
     private Gestore gestore;
     private StringToClassGetter stc = new StringToClassGetter();
-    private ErrorLogger el = new ErrorLogger();
 
     // invariante di classe
     public Cucina(Map<IMerce, Integer> registroCucina, Gestore gestore, Magazzino magazzino) {

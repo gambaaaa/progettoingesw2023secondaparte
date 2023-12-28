@@ -10,19 +10,18 @@ import java.text.ParseException;
 
 public class StartFacade {
     private Initializer init = new Initializer();
-    private ErrorDialog ed = new ErrorDialog();
     private AppUtente appUtente = new AppUtente();
     private DateUtility du = new DateUtility();
     private JSONFileWriter jfw = new JSONFileWriter();
     private TXTFileWriter tfw = new TXTFileWriter();
     private JSONFileReader jfr = new JSONFileReader();
 
-    public void displayStartMenu() throws IOException, ParseException, InterruptedException {
+    public void displayStartMenu() {
         int giorniPassati = jfr.leggiGiornoDaFile(); // variabile giorniPassati necessaria per simulare l'avanzamento della data - dei giorni
         displayMenu(giorniPassati);
     }
 
-    private void displayMenu(int giorniPassati) throws IOException, ParseException, InterruptedException {
+    private void displayMenu(int giorniPassati) {
         int scelta;
         do {
             System.out.println("Oggi è " + du.nameOfDaySinceToday(giorniPassati));
@@ -42,21 +41,21 @@ public class StartFacade {
         System.out.println("Uscendo dal programma...");
     }
 
-    private int eseguiScelta(int scelta, int giorniPassati) throws IOException, ParseException, InterruptedException {
+    private int eseguiScelta(int scelta, int giorniPassati) {
         switch (scelta) {
             case 1:
                 // se è domenica non raccolgo le prenotazioni
                 if (du.isSunday(giorniPassati)) {
-                    ed.logError("Ristorante Chiuso!\n");
+                    ErrorDialog.getInstance().logError("Ristorante Chiuso!\n");
                 } else {
                     init.initPrenotazioni(giorniPassati);
                 }
-                tfw.scriviGiornoSuFile(giorniPassati);
+                tfw.scriviStringaSuFile(String.valueOf(giorniPassati),"initFiles\\giorniPassati.txt", false);
                 break;
             case 2:
                 // se è domenica il ristorante è chiuso, si passa automaticamente al giorno successivo
                 if (du.isSunday(giorniPassati)) {
-                    ed.logError("Ristorante Chiuso!\n");
+                    ErrorDialog.getInstance().logError("Ristorante Chiuso!\n");
                 } else {
                     init.startRistorante();
                 }
