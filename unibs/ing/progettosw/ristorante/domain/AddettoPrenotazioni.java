@@ -24,7 +24,6 @@ public class AddettoPrenotazioni implements Dipendente {
     private List<Prenotazione> prenotazioni = new ArrayList();
     private List<Prenotazione> prenotazioniAccettate = new ArrayList<>();
     private Gestore gestore = new Gestore();
-    private ErrorLogger el = new ErrorLogger();
     private DateUtility du = new DateUtility();
 
     // costruttore

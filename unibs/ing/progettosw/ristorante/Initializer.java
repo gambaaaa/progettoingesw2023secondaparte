@@ -2,9 +2,6 @@ package unibs.ing.progettosw.ristorante;
 
 import unibs.ing.progettosw.ristorante.view.ViewRistorante;
 
-import java.io.IOException;
-import java.text.ParseException;
-
 public class Initializer {
     /*
      * Classe che istanzia la view.

@@ -26,7 +26,6 @@ public class Cucina {
     private JSONFileReader jfr = new JSONFileReader();
     private Gestore gestore;
     private StringToClassGetter stc = new StringToClassGetter();
-    private ErrorLogger el = new ErrorLogger();
 
     // invariante di classe
     public Cucina(Map<IMerce, Integer> registroCucina, Gestore gestore, Magazzino magazzino) {
@@ -95,7 +94,7 @@ public class Cucina {
                     StringWriter sWriter = new StringWriter();
                     e.printStackTrace(new PrintWriter(sWriter));
                     ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
-                    ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+                    ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
                 }
             }
         }
@@ -123,7 +122,7 @@ public class Cucina {
                 StringWriter sWriter = new StringWriter();
                 e.printStackTrace(new PrintWriter(sWriter));
                 ErrorDialog.getInstance().logError("Il programma si è interrotto in maniera improvvisa.\n");
-                ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+                ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
             }
         }
     }

@@ -22,4 +22,8 @@ public class Magazzino {
             }
         }
     }
+
+    public Map<IMerce, Integer> getRegistroMagazzino() {
+        return registroMagazzino;
+    }
 }

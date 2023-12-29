@@ -1,7 +1,6 @@
 package unibs.ing.progettosw.ristorante.domain;
 
 import unibs.ing.progettosw.utilities.DateUtility;
-import unibs.ing.progettosw.utilities.FileService;
 import unibs.ing.progettosw.utilities.JSONFileReader;
 
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ public class Gestore implements Dipendente {
     /*
      * Classe che implementa l'interfaccia dipendente e simula le azioni svolte da un gestore di ristoranti.
      * */
-    private FileService fs = new FileService();
     private JSONFileReader jfr = new JSONFileReader();
     private DateUtility du = new DateUtility();
     private Ristorante ristorante;

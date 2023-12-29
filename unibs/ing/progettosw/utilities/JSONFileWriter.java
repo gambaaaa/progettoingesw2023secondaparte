@@ -43,7 +43,7 @@ public class JSONFileWriter extends JSONFile {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Errore durante il salvataggio della prenotazione. Controllare il percorso della cartella.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
         try {
             fileWriter.write(prenotazioniObj.toString());
@@ -52,7 +52,7 @@ public class JSONFileWriter extends JSONFile {
             //e.printStackTrace();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Errore durante il salvataggio della prenotazione. Controllare che la prenotazione sia valida.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
         try {
             fileWriter.close();
@@ -60,13 +60,13 @@ public class JSONFileWriter extends JSONFile {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Errore duurante la chiusura dello stream.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }
 
     public void scriviPrenotazioniAccettateSuFile(List<Prenotazione> prenotazioniAccettate, String path, String typePrenotazione) {
         File filePath = creaFilePath(path);
-        creaPrenotazioniVuote(path.substring(1));
+        creaPrenotazioniVuote(path);
         JSONObject prenotazioniObj = new JSONObject();
         prenotazioniObj.put(typePrenotazione, prenotazioniAccettate);
 
@@ -84,7 +84,7 @@ public class JSONFileWriter extends JSONFile {
             StringWriter sWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(sWriter));
             ErrorDialog.getInstance().logError("Errore nel copiare i file. Controllare che esistano e siano corretti.\n");
-            ErrorLogger.getInstance().logError(sWriter.toString()+"\n");
+            ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }
 }
