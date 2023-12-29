@@ -33,14 +33,13 @@ public class AddettoPrenotazioni implements Dipendente {
     //        vedi metodi sottostanti.
     public AddettoPrenotazioni(int giorniPassati) {
         this.giorniPassati = giorniPassati;
-        initPrenotazioni();
     }
 
 
     // metodo che permette di inizializzare --> raccogliere le prenotazioni
     // pre : -
     // post :
-    private void initPrenotazioni() {
+    public void initPrenotazioni() {
         raccogliPrenotazioni();
     }
 
@@ -49,12 +48,14 @@ public class AddettoPrenotazioni implements Dipendente {
     // post : eventuale aggiornamento di prenotazioniAccettate (attributo di tale classe) e del file prenotazioniAccettate.json
     private void raccogliPrenotazioni() {
         prenotazioni = jfr.leggiPrenotazioni("/initFiles/prenotazioni.json", "prenotazioni");
-        if (prenotazioni != null) {
-            for (Prenotazione aPreno : prenotazioni) {
-                inserisciNuovaPrenotazione(aPreno);
+        try {
+            if (prenotazioni != null) {
+                for (Prenotazione aPreno : prenotazioni) {
+                    inserisciNuovaPrenotazione(aPreno);
+                }
+                jfw.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
             }
-            jfw.scriviPrenotazioniAccettateSuFile(prenotazioniAccettate, "/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
-        } else {
+        } catch (NullPointerException e) {
             ErrorLogger.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) +
                     ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.\n");
             prenotazioniAccettate = null;
@@ -86,9 +87,9 @@ public class AddettoPrenotazioni implements Dipendente {
     }
 
     // metodo che permette di verificare che la data di una specifica prenotazione sia valida come da consegna
-    // pre : p != NULL
-    // post : true se la data della specifica Prenotazione p è valida
-    //        false se la data della specifica Prenotazione p non è valida
+// pre : p != NULL
+// post : true se la data della specifica Prenotazione p è valida
+//        false se la data della specifica Prenotazione p non è valida
     private boolean isDataPrenotazioneValida(Prenotazione p) {
         // stessa data (anno mese e giorno uguali) ==> data (per cui ho prenotato) la prenotaziona è valida (cioè uguale a quella del giorno corrente)
         Calendar dataPrenotazione = Calendar.getInstance();
@@ -103,34 +104,38 @@ public class AddettoPrenotazioni implements Dipendente {
     }
 
     // metodo che permette di verificare che il carico di lavoro di una data Prenotazione p e di tutte le altre
-    // prenotazioniAccettate non superi il carico di lavoro richiesto / carico di lavoro sostenibile dal ristorante.
-    // pre : p != NULL
-    // post : true se il carico di lavoro sostenibile dal ristorante è minore del carico di lavoro della totalità delle prenotazioni accettate
-    //        false altrimenti
-    // Vedi classe Ristorante
+// prenotazioniAccettate non superi il carico di lavoro richiesto / carico di lavoro sostenibile dal ristorante.
+// pre : p != NULL
+// post : true se il carico di lavoro sostenibile dal ristorante è minore del carico di lavoro della totalità delle prenotazioni accettate
+//        false altrimenti
+// Vedi classe Ristorante
     private boolean isCaricoLavoroSuperato(Prenotazione p) {
         return ristorante.getCaricoLavoroSostenibile() < getCaricoLavoroAttuale(p);
     }
 
     // metodo che permette di calcolare il carico di lavoro attuale dato dalle prenotazioni precedentemente accettate
-    // e dalla prenotazione che si vuole vedere se ha i requisiti per essere accettata
-    // pre : p != NULL
-    // post : valore_ritornato=somma del carico di lavoro di ciascuna prenotazione accettata + carico di lavoro di una data prenotazione p
-    //        valore_ritornato >= 0
+// e dalla prenotazione che si vuole vedere se ha i requisiti per essere accettata
+// pre : p != NULL
+// post : valore_ritornato=somma del carico di lavoro di ciascuna prenotazione accettata + carico di lavoro di una data prenotazione p
+//        valore_ritornato >= 0
     public int getCaricoLavoroAttuale(Prenotazione p) {
         int caricoLavoroAttuale = 0;
-        for (Prenotazione pTemp : prenotazioniAccettate) {
-            caricoLavoroAttuale += getCaricoLavoroFromPrenotazione(pTemp);
+        try {
+            for (Prenotazione pTemp : prenotazioniAccettate) {
+                caricoLavoroAttuale += getCaricoLavoroFromPrenotazione(pTemp);
+            }
+        } catch (NullPointerException e) {
+            ErrorLogger.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) +
+                    ": nessuna prenotazione è stata caricata. Controllare se il comportamento è corretto.\n");
         }
-
         caricoLavoroAttuale += getCaricoLavoroFromPrenotazione(p);
         caricoLavoro = caricoLavoroAttuale;
         return this.caricoLavoro;
     }
 
     // metodo che calcola il carico di lavoro di una data prenotazione
-    // pre : pTemp != NULL
-    // post : caricoLavoro >= 0 && caricoLavoro = somma caricoLavoro di ciascun Menu tematico e piatto prenotato/i
+// pre : pTemp != NULL
+// post : caricoLavoro >= 0 && caricoLavoro = somma caricoLavoro di ciascun Menu tematico e piatto prenotato/i
     private int getCaricoLavoroFromPrenotazione(Prenotazione pTemp) {
 
         // carico lavoro di una prenotazione : valore carico di lavoro di ciascun menuTematico associato +
@@ -160,18 +165,18 @@ public class AddettoPrenotazioni implements Dipendente {
     }
 
     // metodo che verifica se il numero di coperti di tutte le prenotazioni accettate + il numero di coperti di una data prenotazione
-    // eccede il numero di coperti/posti a sedere complessivi disponibili del ristorante
-    // pre : p != NULL
-    // post : true se il numero complessivo di posti a sedere del ristorante è inferiore alla somma del numero di coperti estesa a tutte le prenotazioni raccolte per tale
-    //        data(a tutte le prenotazioni accettate)
-    //        false altrimenti
+// eccede il numero di coperti/posti a sedere complessivi disponibili del ristorante
+// pre : p != NULL
+// post : true se il numero complessivo di posti a sedere del ristorante è inferiore alla somma del numero di coperti estesa a tutte le prenotazioni raccolte per tale
+//        data(a tutte le prenotazioni accettate)
+//        false altrimenti
     private boolean isNumeroCopertiSuperato(Prenotazione p) {
         return Ristorante.getInstance().getPostiSedere() < getPostiAttualmenteOccupati(p);
     }
 
     // metodo che restituisce / calcola la somma del numero di coperti di tutte le prenotazioni accettate + il numero di coperti di una data prenotazione
-    // pre : p != NULL
-    // post : valore_ritornato >= 0 && valore_ritornato = somma numero coperti di ogni prenotazione accettate + numero coperti di una data prenotazione
+// pre : p != NULL
+// post : valore_ritornato >= 0 && valore_ritornato = somma numero coperti di ogni prenotazione accettate + numero coperti di una data prenotazione
     private int getPostiAttualmenteOccupati(Prenotazione p) {
         int postiAttualmenteOccupati = 0;
         for (Prenotazione pTemp : prenotazioniAccettate) {
