@@ -18,7 +18,6 @@ public class JSONFileReader extends JSONFile {
     private final StringToDateConverter std = new StringToDateConverter();
     private final StringToClassGetter stc = new StringToClassGetter();
     private final JSONUtilities ju = new JSONUtilities();
-    private final ErrorLogger el = new ErrorLogger();
 
     public void setupRistorante(String path) {
         JSONObject object;

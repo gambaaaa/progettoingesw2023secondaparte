@@ -179,4 +179,32 @@ public class AddettoPrenotazioni implements Dipendente {
         }
         return p.getNumeroCoperti() + postiAttualmenteOccupati;
     }
+
+    public int getGiorniPassati() {
+        return giorniPassati;
+    }
+
+    public int getCaricoLavoro() {
+        return caricoLavoro;
+    }
+
+    public Ristorante getRistorante() {
+        return ristorante;
+    }
+
+    public List<Prenotazione> getPrenotazioni() {
+        return prenotazioni;
+    }
+
+    public List<Prenotazione> getPrenotazioniAccettate() {
+        return prenotazioniAccettate;
+    }
+
+    public Gestore getGestore() {
+        return gestore;
+    }
+
+    public DateUtility getDu() {
+        return du;
+    }
 }
