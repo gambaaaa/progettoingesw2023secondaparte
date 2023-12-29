@@ -3,16 +3,13 @@ package unibs.ing.progettosw.testing;
 import org.junit.Test;
 import unibs.ing.progettosw.ristorante.domain.AddettoPrenotazioni;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
-import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
-
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertNotNull;
 
 public class TestAddetto {
 
@@ -33,12 +30,12 @@ public class TestAddetto {
         menuTematicoPrenotato.put("MenuPesce", 1);
         Map<String, Integer> piattoPrenotato = new HashMap<>();
         piattoPrenotato.put("Pasta al salmone", 1);
-        Prenotazione p = new Prenotazione(data,dataPrenotazione,numeriCoperti,menuTematicoPrenotato,piattoPrenotato);
+        Prenotazione p = new Prenotazione(data, dataPrenotazione, numeriCoperti, menuTematicoPrenotato, piattoPrenotato);
 
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
+        addetto.initPrenotazioni();
         int caricoLavoroAttuale = addetto.getCaricoLavoroAttuale(p);
         assertEquals(caricoLavoroAttuale, 19); // 13 + 6 se non sbaglio.
     }
-
 }

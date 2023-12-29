@@ -35,6 +35,7 @@ public class Controller {
     // post : prenotazione scritta su file, se valida
     public void caricaAddetto(int giorniPassati) {
         addetto = new AddettoPrenotazioni(giorniPassati);
+        addetto.initPrenotazioni();
     }
 
     // carica le informazioni relative al magazziniere
