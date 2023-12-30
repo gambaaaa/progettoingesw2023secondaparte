@@ -16,12 +16,12 @@ import static junit.framework.TestCase.assertNotNull;
 
 public class TestAddetto {
 
-    /*@Test
+    @Test
     public void testRistorante(){
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
         assertNotNull(addetto.getRistorante());
-    }*/
+    }
 
     @Test
     public void testCaricoLavoroAttuale() {
@@ -37,8 +37,9 @@ public class TestAddetto {
 
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
+        addetto.initPrenotazioni();
         int caricoLavoroAttuale = addetto.getCaricoLavoroAttuale(p);
         assertEquals(caricoLavoroAttuale, 19); // 13 + 6 se non sbaglio.
     }
-
+    
 }
