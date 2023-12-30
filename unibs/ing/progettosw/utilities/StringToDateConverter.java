@@ -9,6 +9,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class StringToDateConverter {
     /*
@@ -36,7 +37,7 @@ public class StringToDateConverter {
     // post : data not null, data è un oggetto valido di tipo Date
     public Date creaDataDaStringaCompleta(String data) {
         try {
-            DateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
+            DateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
             return df.parse(data);
         } catch (ParseException e) {
             StringWriter sWriter = new StringWriter();
