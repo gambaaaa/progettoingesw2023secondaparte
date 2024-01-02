@@ -7,7 +7,6 @@ import unibs.ing.progettosw.ristorante.domain.Ristorante;
 import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
 
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,8 +33,6 @@ public class TestAddetto {
         assertNotNull(addetto.getPrenotazioniAccettate());
     }
 
-
-
     @Test
     public void testCaricoLavoroAttuale() {
         StringToDateConverter std = new StringToDateConverter();
@@ -46,13 +43,12 @@ public class TestAddetto {
         menuTematicoPrenotato.put("MenuPesce", 1);
         Map<String, Integer> piattoPrenotato = new HashMap<>();
         piattoPrenotato.put("Pasta al salmone", 1);
-        Prenotazione p = new Prenotazione(data,dataPrenotazione,numeriCoperti,menuTematicoPrenotato,piattoPrenotato);
+        Prenotazione p = new Prenotazione(data, dataPrenotazione, numeriCoperti, menuTematicoPrenotato, piattoPrenotato);
 
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
         addetto.initPrenotazioni();
         int caricoLavoroAttuale = addetto.getCaricoLavoroAttuale(p);
-        assertEquals(caricoLavoroAttuale, 19); // 13+6
+        assertEquals(caricoLavoroAttuale, 19); // 13 + 6 se non sbaglio.
     }
-
 }
