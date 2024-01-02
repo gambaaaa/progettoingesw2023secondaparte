@@ -18,4 +18,5 @@ public class PrenotazioneUtente {
     public void creaPrenotazione(Prenotazione p) {
         jfw.scriviPrenotazioneSuFile(p, "/initFiles/prenotazioni.json", "prenotazioni", "prenotazioni");
     }
+
 }

@@ -3,11 +3,11 @@ package unibs.ing.progettosw.exceptions;
 import unibs.ing.progettosw.utilities.TXTFileWriter;
 
 public class ErrorLogger {
-    private static ErrorDialog error;
+    private static ErrorLogger error;
 
-    public static ErrorDialog getInstance() {
+    public static ErrorLogger getInstance() {
         if (error == null)
-            error = new ErrorDialog();
+            error = new ErrorLogger();
         return error;
     }
 

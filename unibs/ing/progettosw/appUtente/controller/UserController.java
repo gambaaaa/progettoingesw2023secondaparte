@@ -135,4 +135,12 @@ public class UserController {
     public String creaData(int giorno, int mese, int anno) {
         return giorno + "/" + mese + "/" + anno;
     }
+
+    public PrenotazioneUtente getNuovaPrenotazione() {
+        return nuovaPrenotazione;
+    }
+
+    public Gestore getGestore(){
+        return gestore;
+    }
 }

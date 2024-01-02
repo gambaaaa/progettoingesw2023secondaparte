@@ -36,7 +36,7 @@ public class JSONFileWriter extends JSONFile {
     private void scriviSuFile(JSONObject prenotazioniObj, File filePath) {
         FileWriter fileWriter = null;
         StringWriter sWriter = new StringWriter();
-        ;
+
         try {
             fileWriter = new FileWriter(filePath);
         } catch (IOException e) {
@@ -59,7 +59,7 @@ public class JSONFileWriter extends JSONFile {
         } catch (IOException e) {
             //throw new RuntimeException(e);
             e.printStackTrace(new PrintWriter(sWriter));
-            ErrorDialog.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Errore duurante la chiusura dello stream.\n");
+            ErrorDialog.getInstance().logError(new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()) + ": Errore durante la chiusura dello stream.\n");
             ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }

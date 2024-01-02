@@ -171,7 +171,7 @@ public class AddettoPrenotazioni implements Dipendente {
 //        data(a tutte le prenotazioni accettate)
 //        false altrimenti
     private boolean isNumeroCopertiSuperato(Prenotazione p) {
-        return Ristorante.getInstance().getPostiSedere() < getPostiAttualmenteOccupati(p);
+        return ristorante.getPostiSedere() < getPostiAttualmenteOccupati(p);
     }
 
     // metodo che restituisce / calcola la somma del numero di coperti di tutte le prenotazioni accettate + il numero di coperti di una data prenotazione
@@ -184,4 +184,26 @@ public class AddettoPrenotazioni implements Dipendente {
         }
         return p.getNumeroCoperti() + postiAttualmenteOccupati;
     }
+
+    public int getGiorniPassati() {
+        return giorniPassati;
+    }
+
+    public int getCaricoLavoro() {
+        return caricoLavoro;
+    }
+
+    public Ristorante getRistorante() {
+        return ristorante;
+    }
+
+    public List<Prenotazione> getPrenotazioni() {
+        return prenotazioni;
+    }
+
+    public List<Prenotazione> getPrenotazioniAccettate() {
+        return prenotazioniAccettate;
+    }
+
+
 }

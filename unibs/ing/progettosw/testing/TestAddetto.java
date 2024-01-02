@@ -3,6 +3,8 @@ package unibs.ing.progettosw.testing;
 import org.junit.Test;
 import unibs.ing.progettosw.ristorante.domain.AddettoPrenotazioni;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
+import unibs.ing.progettosw.ristorante.domain.Ristorante;
+import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
 
 import java.util.Date;
@@ -10,15 +12,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
 
 public class TestAddetto {
 
-    /*@Test
-    public void testRistorante(){
+    @Test
+    public void testPrenotazioni(){
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
-        assertNotNull(addetto.getRistorante());
-    }*/
+        addetto.initPrenotazioni();
+        assertNotNull(addetto.getPrenotazioni());
+    }
+
+    @Test
+    public void testPrenotazioniAccettate(){
+        Ristorante r = Ristorante.getInstance("Ristorante",50,100);
+        int giorniPassati = 0;
+        AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
+        addetto.initPrenotazioni();
+        assertNotNull(addetto.getPrenotazioniAccettate());
+    }
 
     @Test
     public void testCaricoLavoroAttuale() {
