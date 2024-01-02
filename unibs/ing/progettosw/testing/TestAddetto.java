@@ -27,7 +27,7 @@ public class TestAddetto {
 
     @Test
     public void testPrenotazioniAccettate(){
-        Ristorante r = Ristorante.getInstance("bo",50,100);
+        Ristorante r = Ristorante.getInstance("Ristorante",50,100);
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
         addetto.initPrenotazioni();

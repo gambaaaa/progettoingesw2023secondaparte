@@ -12,7 +12,7 @@ public class Ricetta {
 
     //Attributi privati
     private String nome;
-    private Map<String, Integer> ingredienti;//non si deve usare una Map<Ingrediente,Double> ?
+    private Map<String, Integer> ingredienti;
     private int porzioni;
     /*
      * Nota : il carico di lavoro per porzione è una frazione (minore dell’unità) del carico di lavoro per persona(intero).

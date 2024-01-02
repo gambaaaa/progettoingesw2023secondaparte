@@ -2,8 +2,8 @@
   "prenotazioni": [
     {
       "menuTematicoPrenotato": {
-        "MenuCarnePesce": 1,
-        "MenuCarne": 1
+        "MenuCarne": 1,
+        "MenuCarnePesce": 1
       },
       "numeroCoperti": 3,
       "dataPrenotazione": "Wed Dec 27 00:00:00 CET 2023",
@@ -11,6 +11,30 @@
       "piattoPrenotato": {
         "Pizza margherita": 1
       }
+    },
+    {
+      "menuTematicoPrenotato": {
+        "MenuPesce": 1
+      },
+      "numeroCoperti": 1,
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Wed Dec 20 00:00:00 CET 2023"
+    },
+    {
+      "menuTematicoPrenotato": {
+        "MenuPesce": 1
+      },
+      "numeroCoperti": 1,
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Wed Dec 20 00:00:00 CET 2023"
+    },
+    {
+      "menuTematicoPrenotato": {
+        "MenuPesce": 1
+      },
+      "numeroCoperti": 1,
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Wed Dec 20 00:00:00 CET 2023"
     }
   ]
 }
