@@ -4,7 +4,6 @@ import org.junit.Test;
 import unibs.ing.progettosw.ristorante.domain.AddettoPrenotazioni;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
 import unibs.ing.progettosw.ristorante.domain.Ristorante;
-import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
 
 import java.util.Date;
@@ -17,7 +16,7 @@ import static junit.framework.TestCase.assertNotNull;
 public class TestAddetto {
 
     @Test
-    public void testPrenotazioni(){
+    public void testPrenotazioni() {
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
         addetto.initPrenotazioni();
@@ -25,8 +24,8 @@ public class TestAddetto {
     }
 
     @Test
-    public void testPrenotazioniAccettate(){
-        Ristorante r = Ristorante.getInstance("Ristorante",50,100);
+    public void testPrenotazioniAccettate() {
+        Ristorante r = Ristorante.getInstance("Ristorante", 50, 100);
         int giorniPassati = 0;
         AddettoPrenotazioni addetto = new AddettoPrenotazioni(giorniPassati);
         addetto.initPrenotazioni();

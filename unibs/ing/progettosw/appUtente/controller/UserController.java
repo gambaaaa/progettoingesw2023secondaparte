@@ -140,7 +140,7 @@ public class UserController {
         return nuovaPrenotazione;
     }
 
-    public Gestore getGestore(){
+    public Gestore getGestore() {
         return gestore;
     }
 }

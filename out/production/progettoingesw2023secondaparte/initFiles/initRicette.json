@@ -1,0 +1,148 @@
+{
+  "ricette": [
+    {
+      "nome": "Pizza margherita",
+      "ingredienti":[
+        {
+          "key": "Acqua",
+          "value": 150
+        },
+        {
+          "key": "Olio extravergine di oliva",
+          "value": 20
+        },
+        {
+          "key": "Lievito",
+          "value": 5
+        },
+        {
+          "key": "Farina",
+          "value": 150
+        },
+        {
+          "key": "Pomodoro",
+          "value": 50
+        },
+        {
+          "key": "Mozzarella",
+          "value": 50
+        }
+      ],
+      "porzione": 1,
+      "caricoLavoroPorzione": 5.0
+    },
+    {
+      "nome": "Pasta al salmone",
+      "ingredienti": [{
+        "key": "Pasta",
+        "value": 100
+      },
+        {
+          "key": "Salmone",
+          "value": 100
+        },
+        {
+          "key": "Panna",
+          "value": 50
+        }],
+      "porzione": 2,
+      "caricoLavoroPorzione": 6.0
+    },
+    {
+      "nome": "Bistecca alla fiorentina",
+      "ingredienti": [{
+        "key": "Bistecca Fiorentina",
+        "value": 100
+      },
+        {
+          "key": "Olio extravergine di oliva",
+          "value": 100
+        },
+        {
+          "key": "Sale fino",
+          "value": 50
+        }],
+      "porzione": 2,
+      "caricoLavoroPorzione": 8.0
+    },
+    {
+      "nome": "Tomahawk alla griglia",
+      "ingredienti": [{
+        "key": "Manzo(tomahawk)",
+        "value": 100
+      },
+        {
+          "key": "Burro",
+          "value": 10
+        },
+        {
+          "key": "Rosmarino",
+          "value": 2
+        },
+        {
+          "key": "Salvia",
+          "value": 4
+        },
+        {
+          "key": "Pepe nero",
+          "value": 2
+        },
+        {
+          "key": "Sale grosso",
+          "value": 5
+        }],
+      "porzione": 2,
+      "caricoLavoroPorzione": 8.0
+    },
+    {
+      "nome": "Tagliatelle al ragù",
+      "ingredienti": [{
+        "key": "Tagliatelle",
+        "value": 100
+      },
+        {
+          "key": "Ragù fatto in casa",
+          "value": 50
+        },
+        {
+          "key": "Parmigiano",
+          "value": 20
+        }],
+      "porzione": 2,
+      "caricoLavoroPorzione": 7.0
+    },
+    {
+      "nome": "Branzino alla ligure",
+      "ingredienti": [{
+        "key": "Branzino",
+        "value": 100
+      },
+        {
+          "key": "Aglio",
+          "value": 5
+        },
+        {
+          "key": "Sale fino",
+          "value": 5
+        },
+        {
+          "key": "Olio extravergine di oliva",
+          "value": 10
+        },
+        {
+          "key": "Timo",
+          "value": 5
+        },
+        {
+          "key": "Olive taggiasche",
+          "value": 10
+        },
+        {
+          "key": "Pepe nero",
+          "value": 5
+        }],
+      "porzione": 2,
+      "caricoLavoroPorzione": 7.0
+    }
+  ]
+}
