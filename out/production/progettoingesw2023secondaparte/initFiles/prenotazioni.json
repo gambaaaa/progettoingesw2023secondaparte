@@ -11,6 +11,17 @@
       "piattoPrenotato": {
         "Pizza margherita": 1
       }
-}
+    },
+    {
+      "menuTematicoPrenotato": {
+        "MenuCarne": 1
+      },
+      "numeroCoperti": 2,
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Sun Jan 01 00:00:00 CET 2023",
+      "piattoPrenotato": {
+        "Bistecca alla fiorentina": 1
+      }
+    }
   ]
 }

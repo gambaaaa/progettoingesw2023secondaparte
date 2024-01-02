@@ -1,0 +1,16 @@
+{
+  "prenotazioni": [
+    {
+      "menuTematicoPrenotato": {
+        "MenuCarne": 1,
+        "MenuCarnePesce": 1
+      },
+      "numeroCoperti": 3,
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Fri Jan 05 00:00:00 CET 2024",
+      "piattoPrenotato": {
+        "Pizza margherita": 1
+      }
+    }
+  ]
+}
