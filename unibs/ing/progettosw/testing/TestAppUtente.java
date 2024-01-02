@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TestAppUtente {
 
@@ -45,7 +46,7 @@ public class TestAppUtente {
                 numeroCoperti, menuTematiciPrenotati, piattiPrenotati);
 
         Prenotazione prenotazioneDaFile = jfr.leggiPrenotazioni("/unibs/ing/progettosw/testing/prenotazioniTest.json", "prenotazioni").get(0);
-        assertEquals(true, checkIfPrenotazioniAreEqual(p, prenotazioneDaFile));
+        assertTrue(checkIfPrenotazioniAreEqual(p, prenotazioneDaFile));
     }
 
     private boolean checkIfPrenotazioniAreEqual(Prenotazione actual, Prenotazione expected) {
