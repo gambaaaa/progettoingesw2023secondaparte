@@ -2,17 +2,11 @@ package unibs.ing.progettosw.testing;
 
 import org.junit.Test;
 import unibs.ing.progettosw.appUtente.controller.UserController;
-import unibs.ing.progettosw.ristorante.domain.Ingrediente;
-import unibs.ing.progettosw.ristorante.domain.MenuTematico;
 import unibs.ing.progettosw.ristorante.domain.Prenotazione;
 import unibs.ing.progettosw.utilities.DateUtility;
 import unibs.ing.progettosw.utilities.JSONFileReader;
 import unibs.ing.progettosw.utilities.StringToDateConverter;
-import unibs.ing.progettosw.ristorante.domain.Gestore;
-import unibs.ing.progettosw.ristorante.domain.Piatto;
-import unibs.ing.progettosw.ristorante.domain.Ricetta;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 public class TestAppUtente {
 
     @Test
-    public void testStart(){
+    public void testStart() {
         UserController controller = new UserController();
         controller.start();
 
@@ -33,7 +27,7 @@ public class TestAppUtente {
     }
 
     @Test
-    public void testMenuTematici(){
+    public void testMenuTematici() {
         StringToDateConverter std = new StringToDateConverter();
         DateUtility du = new DateUtility();
 
@@ -49,9 +43,9 @@ public class TestAppUtente {
         piattiPrenotati.put(controller.getGestore().getListaPiattiValidi(dayPassed).get(3).getNome(), 1);
 
         Map<String, Integer> menuTematiciPrenotati = new HashMap<>();
-        menuTematiciPrenotati.put(controller.getGestore().getMenuTematiciValidi(dayPassed).get(0).getNome(),numeroMenu); // "MenuCarne"
+        menuTematiciPrenotati.put(controller.getGestore().getMenuTematiciValidi(dayPassed).get(0).getNome(), numeroMenu); // "MenuCarne"
 
-        Prenotazione p = new Prenotazione(std.creaDataDaStringa(data),du.todaysDate(),numeroCoperti,menuTematiciPrenotati,piattiPrenotati);
+        Prenotazione p = new Prenotazione(std.creaDataDaStringa(data), du.todaysDate(), numeroCoperti, menuTematiciPrenotati, piattiPrenotati);
 
         JSONFileReader jfr = new JSONFileReader();
 
@@ -59,11 +53,11 @@ public class TestAppUtente {
         Prenotazione pe = prenotazioni.stream().filter(prenotazione -> prenotazione.getMenuTematicoPrenotato().containsKey("MenuCarne") && prenotazione.getDataPrenotazione().equals(du.todaysDate())).findAny().orElse(null);
 
         assert pe != null;
-        assertEquals(p.getMenuTematicoPrenotato(),pe.getMenuTematicoPrenotato());
+        assertEquals(p.getMenuTematicoPrenotato(), pe.getMenuTematicoPrenotato());
     }
 
     @Test
-    public void testPiattiPrenotati(){
+    public void testPiattiPrenotati() {
         StringToDateConverter std = new StringToDateConverter();
         DateUtility du = new DateUtility();
 
@@ -79,9 +73,9 @@ public class TestAppUtente {
         piattiPrenotati.put(controller.getGestore().getListaPiattiValidi(dayPassed).get(3).getNome(), 1);
 
         Map<String, Integer> menuTematiciPrenotati = new HashMap<>();
-        menuTematiciPrenotati.put(controller.getGestore().getMenuTematiciValidi(dayPassed).get(0).getNome(),numeroMenu); // "MenuCarne"
+        menuTematiciPrenotati.put(controller.getGestore().getMenuTematiciValidi(dayPassed).get(0).getNome(), numeroMenu); // "MenuCarne"
 
-        Prenotazione p = new Prenotazione(std.creaDataDaStringa(data),du.todaysDate(),numeroCoperti,menuTematiciPrenotati,piattiPrenotati);
+        Prenotazione p = new Prenotazione(std.creaDataDaStringa(data), du.todaysDate(), numeroCoperti, menuTematiciPrenotati, piattiPrenotati);
 
         JSONFileReader jfr = new JSONFileReader();
 
@@ -89,11 +83,11 @@ public class TestAppUtente {
         Prenotazione pe = prenotazioni.stream().filter(prenotazione -> prenotazione.getMenuTematicoPrenotato().containsKey("MenuCarne") && prenotazione.getDataPrenotazione().equals(du.todaysDate())).findAny().orElse(null);
 
         assert pe != null;
-        assertEquals(p.getPiattoPrenotato(),pe.getPiattoPrenotato());
+        assertEquals(p.getPiattoPrenotato(), pe.getPiattoPrenotato());
     }
 
     @Test
-    public void testPrenotazione(){
+    public void testPrenotazione() {
         StringToDateConverter std = new StringToDateConverter();
         DateUtility du = new DateUtility();
 
@@ -109,9 +103,9 @@ public class TestAppUtente {
         piattiPrenotati.put(controller.getGestore().getListaPiattiValidi(dayPassed).get(3).getNome(), 1);
 
         Map<String, Integer> menuTematiciPrenotati = new HashMap<>();
-        menuTematiciPrenotati.put(controller.getGestore().getMenuTematiciValidi(dayPassed).get(0).getNome(),numeroMenu); // "MenuCarne"
+        menuTematiciPrenotati.put(controller.getGestore().getMenuTematiciValidi(dayPassed).get(0).getNome(), numeroMenu); // "MenuCarne"
 
-        Prenotazione p = new Prenotazione(std.creaDataDaStringa(data),du.todaysDate(),numeroCoperti,menuTematiciPrenotati,piattiPrenotati);
+        Prenotazione p = new Prenotazione(std.creaDataDaStringa(data), du.todaysDate(), numeroCoperti, menuTematiciPrenotati, piattiPrenotati);
 
         JSONFileReader jfr = new JSONFileReader();
 
@@ -119,7 +113,7 @@ public class TestAppUtente {
         Prenotazione pe = prenotazioni.stream().filter(prenotazione -> prenotazione.getMenuTematicoPrenotato().containsKey("MenuCarne") && prenotazione.getDataPrenotazione().equals(du.todaysDate())).findAny().orElse(null);
 
         assert pe != null;
-        assertTrue(checkIfPrenotazioniAreEqual(p,pe));
+        assertTrue(checkIfPrenotazioniAreEqual(p, pe));
     }
 
     private boolean checkIfPrenotazioniAreEqual(Prenotazione actual, Prenotazione expected) {
@@ -139,24 +133,24 @@ public class TestAppUtente {
 
 
     @Test
-    public void testPiattiValidi(){
+    public void testPiattiValidi() {
         UserController controller = new UserController();
         controller.start();
 
         int dayPassed = 0;
 
         String listaPiattiValidi = "0 - Bistecca alla fiorentina\n1 - Tagliatelle al ragù\n2 - Branzino alla ligure\n3 - Pizza margherita\n4 - Tomahawk alla griglia\n";
-        assertEquals(listaPiattiValidi,controller.listaPiattiDaStampare(0));
+        assertEquals(listaPiattiValidi, controller.listaPiattiDaStampare(dayPassed));
     }
 
     @Test
-    public void testMenuValidi(){
+    public void testMenuValidi() {
         UserController controller = new UserController();
         controller.start();
 
         int dayPassed = 0;
 
         String listaMenuValidi = "0 - MenuCarne\n1 - MenuCarnePesce\n";
-        assertEquals(listaMenuValidi,controller.listaMenuDaStampare(0));
+        assertEquals(listaMenuValidi, controller.listaMenuDaStampare(dayPassed));
     }
 }
