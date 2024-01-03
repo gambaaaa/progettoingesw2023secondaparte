@@ -2,12 +2,11 @@
   "prenotazioni": [
     {
       "menuTematicoPrenotato": {
-        "MenuCarne": 1,
-        "MenuCarnePesce": 1
+        "MenuCarne": 1
       },
-      "numeroCoperti": 3,
-      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
-      "data": "Fri Jan 05 00:00:00 CET 2024",
+      "numeroCoperti": 2,
+      "dataPrenotazione": "Wed Jan 03 00:00:00 CET 2024",
+      "data": "Mon Jan 08 00:00:00 CET 2024",
       "piattoPrenotato": {
         "Pizza margherita": 1
       }
