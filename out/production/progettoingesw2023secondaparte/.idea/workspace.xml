@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d540f9f8-ef90-4ada-9c99-d75367196b4e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/unibs/ing/progettosw/testing/prenotazioniTest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unibs/ing/progettosw/testing/TestAppUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/unibs/ing/progettosw/testing/TestAppUtente.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2ZWaYLIuRT8TdF8WVQMBL9xQyxr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/matti/OneDrive/Documenti/GitHub/progettoingesw2023secondaparte&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.TestAppUtente.testMenuTematici">
+    <configuration name="TestAppUtente.testMenuTematici" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progettoingesw2023secondaparte" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
+      <option name="METHOD_NAME" value="testMenuTematici" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAppUtente.testMenuValidi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progettoingesw2023secondaparte" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
+      <option name="METHOD_NAME" value="testMenuValidi" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAppUtente.testPiattiPrenotati" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progettoingesw2023secondaparte" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
+      <option name="METHOD_NAME" value="testPiattiPrenotati" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAppUtente.testPiattiValidi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progettoingesw2023secondaparte" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
+      <option name="METHOD_NAME" value="testPiattiValidi" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAppUtente.testPrenotazione" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="progettoingesw2023secondaparte" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
+      <option name="METHOD_NAME" value="testPrenotazione" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestAppUtente.testMenuTematici" />
+        <item itemvalue="JUnit.TestAppUtente.testPrenotazione" />
+        <item itemvalue="JUnit.TestAppUtente.testMenuValidi" />
+        <item itemvalue="JUnit.TestAppUtente.testPiattiValidi" />
+        <item itemvalue="JUnit.TestAppUtente.testPiattiPrenotati" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d540f9f8-ef90-4ada-9c99-d75367196b4e" name="Changes" comment="" />
+      <created>1702540335728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702540335728</updated>
+      <workItem from="1702540336731" duration="2258000" />
+      <workItem from="1703689956994" duration="151000" />
+      <workItem from="1703690142305" duration="946000" />
+      <workItem from="1703701051781" duration="3335000" />
+      <workItem from="1703750003391" duration="2783000" />
+      <workItem from="1703753231339" duration="308000" />
+      <workItem from="1703753610750" duration="66000" />
+      <workItem from="1703836576050" duration="53000" />
+      <workItem from="1703837198054" duration="4649000" />
+      <workItem from="1703885156080" duration="348000" />
+      <workItem from="1703925084273" duration="5212000" />
+      <workItem from="1703930417958" duration="839000" />
+      <workItem from="1704191476216" duration="5131000" />
+      <workItem from="1704204184139" duration="3600000" />
+      <workItem from="1704232998717" duration="1531000" />
+      <workItem from="1704270545800" duration="2704000" />
+      <workItem from="1704273322847" duration="108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
