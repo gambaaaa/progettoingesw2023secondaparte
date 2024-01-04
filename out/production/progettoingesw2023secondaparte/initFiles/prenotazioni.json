@@ -6,8 +6,8 @@
         "MenuCarnePesce": 1
       },
       "numeroCoperti": 3,
-      "dataPrenotazione": "Wed Dec 27 00:00:00 CET 2023",
-      "data": "Sat Dec 30 00:00:00 CET 2023",
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Thu Jan 04 00:00:00 CET 2024",
       "piattoPrenotato": {
         "Pizza margherita": 1
       }
@@ -21,6 +21,29 @@
       "data": "Sun Jan 01 00:00:00 CET 2023",
       "piattoPrenotato": {
         "Bistecca alla fiorentina": 1
+      }
+    },
+    {
+      "menuTematicoPrenotato": {
+        "MenuCarne": 1
+      },
+      "numeroCoperti": 2,
+      "dataPrenotazione": "Thu Jan 04 00:00:00 CET 2024",
+      "data": "Tue Jan 02 00:00:00 CET 2024",
+      "piattoPrenotato": {
+        "Bistecca alla fiorentina": 1
+      }
+    },
+    {
+      "menuTematicoPrenotato": {
+        "MenuCarnePesce": 1,
+        "MenuCarne": 1
+      },
+      "numeroCoperti": 3,
+      "dataPrenotazione": "Tue Jan 02 00:00:00 CET 2024",
+      "data": "Thu Jan 04 00:00:00 CET 2024",
+      "piattoPrenotato": {
+        "Pizza margherita": 1
       }
     }
   ]
