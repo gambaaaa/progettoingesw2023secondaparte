@@ -6,6 +6,8 @@ import unibs.ing.progettosw.exceptions.ErrorLogger;
 import java.io.*;
 
 public class TXTFileWriter {
+
+    /*
     public void scriviGiornoSuFile(int giorniPassati) {
         File giornoFile = new File("initFiles\\giorniPassati.txt");
         try {
@@ -20,6 +22,7 @@ public class TXTFileWriter {
             ErrorLogger.getInstance().logError(sWriter.toString() + "\n");
         }
     }
+     */
 
     public void scriviStringaSuFile(String message, String path, boolean append) {
         try {

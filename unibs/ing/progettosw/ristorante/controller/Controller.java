@@ -8,7 +8,7 @@ public class Controller {
      * Classe che rappresenta il Controller del package unibs.ing.progettosw.ristorante conforme con il pattern MVC.
      * */
 
-    private ViewRistorante view; // View package unibs.ing.progettosw.ristorante
+    // private ViewRistorante view; // View package unibs.ing.progettosw.ristorante
     private Gestore gestore;
     private AddettoPrenotazioni addetto;
     private Magazziniere magazziniere;

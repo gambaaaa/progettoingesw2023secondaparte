@@ -11,10 +11,10 @@ public class Ristorante {
     private String nome;
     private int postiSedere;
     private int caricoLavoroPersona;
-    private Map<String, Ricetta> ricettario;
-    private List<MenuTematico> menuTematici;
-    private List<Piatto> menuCarta;
-    private List<Prenotazione> prenotazioni;
+    // private Map<String, Ricetta> ricettario;
+    // private List<MenuTematico> menuTematici;
+    // private List<Piatto> menuCarta;
+    // private List<Prenotazione> prenotazioni;
 
     private Ristorante(String nome, int postiSedere, int caricoLavoroPersona) {
         this.nome = nome;
