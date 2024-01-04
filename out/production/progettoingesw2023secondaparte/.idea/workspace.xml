@@ -1,85 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="progettoingesw2023secondaparte:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d540f9f8-ef90-4ada-9c99-d75367196b4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/unibs/ing/progettosw/testing/prenotazioniTest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unibs/ing/progettosw/testing/TestAppUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/unibs/ing/progettosw/testing/TestAppUtente.java" afterDir="false" />
+    <list default="true" id="ef144705-0df7-469b-86b9-1b1ae8e730cc" name="Changes" comment="TestAppUtente">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/progettoingesw2023secondaparte_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/progettoingesw2023secondaparte_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initFiles/prenotazioni.json" beforeDir="false" afterPath="$PROJECT_DIR$/initFiles/prenotazioni.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initFiles/prenotazioniAccettate.json" beforeDir="false" afterPath="$PROJECT_DIR$/initFiles/prenotazioniAccettate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlogs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlogs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/.idea/artifacts/progettoingesw2023secondaparte_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/.idea/artifacts/progettoingesw2023secondaparte_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/initFiles/prenotazioni.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/initFiles/prenotazioni.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/initFiles/prenotazioniAccettate.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/initFiles/prenotazioniAccettate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/logs/errorlogs.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/logs/errorlogs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/ristorante/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/ristorante/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/ristorante/domain/Cucina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/ristorante/domain/Cucina.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/ristorante/domain/Ristorante.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/ristorante/domain/Ristorante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/testing/TestAppUtente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/testing/TestAppUtente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/testing/prenotazioniTest.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/testing/prenotazioniTest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/utilities/FileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/utilities/TXTFileWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoingesw2023secondaparte/unibs/ing/progettosw/utilities/TXTFileWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unibs/ing/progettosw/ristorante/domain/Cucina.java" beforeDir="false" afterPath="$PROJECT_DIR$/unibs/ing/progettosw/ristorante/domain/Cucina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2ZWaYLIuRT8TdF8WVQMBL9xQyxr" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2aPGsVyOXG19bjPC1qecZV26Wqk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/matti/OneDrive/Documenti/GitHub/progettoingesw2023secondaparte&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Start.executor": "Run",
+    "JUnit.TestAddetto and 3 more.executor": "Run",
+    "JUnit.TestAddetto.executor": "Run",
+    "JUnit.TestAddetto.testPrenotazioni.executor": "Run",
+    "JUnit.TestAppUtente.executor": "Run",
+    "JUnit.TestAppUtente.testPrenotazione.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Gabriele/IdeaProjects/progettoingesw2023secondaparte/META-INF",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.TestAppUtente.testMenuTematici">
-    <configuration name="TestAppUtente.testMenuTematici" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="Application.Start">
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.Start" />
       <module name="progettoingesw2023secondaparte" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
+          <option name="PATTERN" value="unibs.ing.progettosw.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
-      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
-      <option name="METHOD_NAME" value="testMenuTematici" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAppUtente.testMenuValidi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAddetto and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progettoingesw2023secondaparte" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unibs.ing.progettosw.testing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
-      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
-      <option name="METHOD_NAME" value="testMenuValidi" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="unibs.ing.progettosw.testing.TestAddetto" />
+        <pattern testClass="unibs.ing.progettosw.testing.TestAppUtente" />
+        <pattern testClass="unibs.ing.progettosw.testing.TestGestore" />
+        <pattern testClass="unibs.ing.progettosw.testing.TestMagazzino" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAppUtente.testPiattiPrenotati" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAddetto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progettoingesw2023secondaparte" />
       <extension name="coverage">
         <pattern>
@@ -88,14 +111,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
-      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
-      <option name="METHOD_NAME" value="testPiattiPrenotati" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAddetto" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAppUtente.testPiattiValidi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAppUtente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="progettoingesw2023secondaparte" />
       <extension name="coverage">
         <pattern>
@@ -105,8 +127,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="unibs.ing.progettosw.testing" />
       <option name="MAIN_CLASS_NAME" value="unibs.ing.progettosw.testing.TestAppUtente" />
-      <option name="METHOD_NAME" value="testPiattiValidi" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,54 +150,90 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAppUtente.testMenuTematici" />
+        <item itemvalue="Application.Start" />
+        <item itemvalue="JUnit.TestAddetto and 3 more" />
         <item itemvalue="JUnit.TestAppUtente.testPrenotazione" />
-        <item itemvalue="JUnit.TestAppUtente.testMenuValidi" />
-        <item itemvalue="JUnit.TestAppUtente.testPiattiValidi" />
-        <item itemvalue="JUnit.TestAppUtente.testPiattiPrenotati" />
+        <item itemvalue="JUnit.TestAppUtente" />
+        <item itemvalue="JUnit.TestAddetto" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.22-semeru-11.0.22-f644763e9732-d90ddd3d" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d540f9f8-ef90-4ada-9c99-d75367196b4e" name="Changes" comment="" />
-      <created>1702540335728</created>
+      <changelist id="ef144705-0df7-469b-86b9-1b1ae8e730cc" name="Changes" comment="" />
+      <created>1704213007585</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1702540335728</updated>
-      <workItem from="1702540336731" duration="2258000" />
-      <workItem from="1703689956994" duration="151000" />
-      <workItem from="1703690142305" duration="946000" />
-      <workItem from="1703701051781" duration="3335000" />
-      <workItem from="1703750003391" duration="2783000" />
-      <workItem from="1703753231339" duration="308000" />
-      <workItem from="1703753610750" duration="66000" />
-      <workItem from="1703836576050" duration="53000" />
-      <workItem from="1703837198054" duration="4649000" />
-      <workItem from="1703885156080" duration="348000" />
-      <workItem from="1703925084273" duration="5212000" />
-      <workItem from="1703930417958" duration="839000" />
-      <workItem from="1704191476216" duration="5131000" />
-      <workItem from="1704204184139" duration="3600000" />
-      <workItem from="1704232998717" duration="1531000" />
-      <workItem from="1704270545800" duration="2704000" />
-      <workItem from="1704273322847" duration="108000" />
+      <updated>1704213007585</updated>
+      <workItem from="1704213008853" duration="1131000" />
+      <workItem from="1704214255454" duration="3815000" />
+      <workItem from="1704273355247" duration="874000" />
+      <workItem from="1704392444534" duration="29000" />
+      <workItem from="1704392517881" duration="251000" />
+      <workItem from="1704392782347" duration="860000" />
+      <workItem from="1704393658564" duration="524000" />
+      <workItem from="1704394197761" duration="1106000" />
+      <workItem from="1704395373276" duration="1626000" />
+      <workItem from="1704397142312" duration="169000" />
     </task>
+    <task id="LOCAL-00001" summary="TestAddetto">
+      <option name="closed" value="true" />
+      <created>1704213576747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704213576747</updated>
+    </task>
+    <task id="LOCAL-00002" summary="TestAppUtente?">
+      <option name="closed" value="true" />
+      <created>1704218229737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704218229737</updated>
+    </task>
+    <task id="LOCAL-00003" summary="TestAppUtente?">
+      <option name="closed" value="true" />
+      <created>1704218247434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704218247434</updated>
+    </task>
+    <task id="LOCAL-00004" summary="TestAppUtente?">
+      <option name="closed" value="true" />
+      <created>1704273376715</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704273376715</updated>
+    </task>
+    <task id="LOCAL-00005" summary="TestAppUtente">
+      <option name="closed" value="true" />
+      <created>1704273764734</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704273764734</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TestAddetto" />
+    <MESSAGE value="TestAppUtente?" />
+    <MESSAGE value="TestAppUtente" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestAppUtente" />
   </component>
 </project>

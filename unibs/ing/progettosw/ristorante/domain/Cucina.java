@@ -50,7 +50,7 @@ public class Cucina {
                 }
             }
         } else {
-            System.out.println("\nNon ci sono prenotazioni oggi, si torna a casa...\n");
+            ErrorDialog.getInstance().logError("\nNon ci sono prenotazioni oggi, si torna a casa...\n");
         }
     }
 
@@ -59,7 +59,7 @@ public class Cucina {
     // post : prenotazioni deve essere una lista di solo prenotazioni accettate (anche vuota - empty)
     //        prenotazioni.size() >= 0
     private List<Prenotazione> recuperaPrenotazioniAccettate() {
-        List<Prenotazione> prenotazioni = null;
+        List<Prenotazione> prenotazioni;
         prenotazioni = jfr.leggiPrenotazioni("/initFiles/prenotazioniAccettate.json", "prenotazioniAccettate");
         return prenotazioni;
     }
@@ -82,10 +82,10 @@ public class Cucina {
     private void estraiMenuDaMappa(Map<String, Integer> menuTPrenotati) {
         for (Map.Entry<String, Integer> entry : menuTPrenotati.entrySet()) {
             Menu menuT = stc.getMenuTematicofromNome(gestore.getMenuT(), entry.getKey());
-            System.out.println("\nStiamo cucinando " + menuT.getNome() + ", portate pazienza...");
+            ErrorDialog.getInstance().logError("\nStiamo cucinando " + menuT.getNome() + ", portate pazienza...");
             List<Piatto> listaPiatti = estraiPiattiDaMenuT(menuT);
             for (Piatto aPiatto : listaPiatti) {
-                System.out.println("Stiamo cucinando " + aPiatto.getNome());
+                ErrorDialog.getInstance().logError("Stiamo cucinando " + aPiatto.getNome());
                 Ricetta r = aPiatto.getRicetta();
                 estraiIngredientiDaRicetta(r);
                 try {
@@ -113,7 +113,7 @@ public class Cucina {
     // post : ricetta costituente ciascun piatto "cucinata" && quantità ingredienti relativi decrementate opportunamente
     private void estraiPiattiDaMappa(Map<String, Integer> mappaPietanze) {
         for (Map.Entry<String, Integer> entry : mappaPietanze.entrySet()) {
-            System.out.println("\nStiamo cucinando " + entry.getKey() + ", portate pazienza...");
+            ErrorDialog.getInstance().logError("\nStiamo cucinando " + entry.getKey() + ", portate pazienza...");
             Ricetta r = estraiRicettaDaPiatti(entry);
             estraiIngredientiDaRicetta(r);
             try {
@@ -140,7 +140,7 @@ public class Cucina {
                 decrementaQuantitaIngredienteDaCucina(anIngre, decremento);
                 isScadente = isProdottoScadente();
                 if (isScadente) {
-                    System.out.println(anIngre.getNome() + " è di cattiva qualità! Ritentiamo un'altra volta...");
+                    ErrorDialog.getInstance().logError(anIngre.getNome() + " è di cattiva qualità! Ritentiamo un'altra volta...");
                 }
             } while (isScadente);
         }
@@ -153,7 +153,7 @@ public class Cucina {
         int quantitaPresente = this.registroCucina.get(ingr);
 
         if ((quantitaPresente - decremento) < 0) {
-            System.out.println("Manca l'ingrediente! Un attimo che lo recuperiamo dal magazzino...");
+            ErrorDialog.getInstance().logError("Manca l'ingrediente! Un attimo che lo recuperiamo dal magazzino...");
             magazzino.decrementaQuantitaMerce(ingr, 100);
         } else {
             this.registroCucina.put(ingr, quantitaPresente - decremento);
